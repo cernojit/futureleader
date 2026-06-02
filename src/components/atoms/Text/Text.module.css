@@ -1,0 +1,12 @@
+.text {
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.sm { font-size: 0.875rem; }
+.md { font-size: 1rem; }
+.lg { font-size: 1.125rem; }
+
+.extralight { font-weight: var(--font-weight-extralight); }
+.regular { font-weight: var(--font-weight-regular); }
+.semibold { font-weight: var(--font-weight-semibold); }
