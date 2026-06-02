@@ -1,0 +1,32 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-sm);
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--color-accent-pink);
+}
+
+.name {
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+}
+
+.role {
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-extralight);
+  color: var(--color-primary);
+}
+
+.description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-text);
+}

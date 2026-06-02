@@ -1,0 +1,19 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  font-style: normal;
+}
+
+.name {
+  font-weight: var(--font-weight-semibold);
+}
+
+.link {
+  color: var(--color-accent-coral);
+  transition: opacity 0.2s ease;
+}
+
+.link:hover {
+  opacity: 0.7;
+}

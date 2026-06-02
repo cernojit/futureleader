@@ -1,0 +1,26 @@
+.link {
+  font-size: 0.9375rem;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.link:hover {
+  color: var(--color-accent-coral);
+}
+
+.active {
+  font-weight: var(--font-weight-semibold);
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: var(--spacing-sm);
+  right: var(--spacing-sm);
+  height: 2px;
+  background-color: var(--color-accent-coral);
+}
