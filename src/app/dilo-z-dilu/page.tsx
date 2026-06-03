@@ -25,6 +25,24 @@ function DecorSymbol() {
   );
 }
 
+const GALLERY_IMAGES = [
+  { src: "/images/dilo-z-dilu/IMG_1024.webp", alt: "Dílo z dílů — detail" },
+  { src: "/images/dilo-z-dilu/IMG_1004.webp", alt: "Dílo z dílů — pohled" },
+  { src: "/images/dilo-z-dilu/IMG_1030+1.webp", alt: "Dílo z dílů — perspektiva" },
+  { src: "/images/dilo-z-dilu/IMG_0990.webp", alt: "Dílo z dílů — celek" },
+];
+
+const PROCESS_IMAGES = [
+  { src: "/images/dilo-z-dilu/Dilo_kovotlaceni_mosaz_kmen+(1).webp", alt: "Kovotlačení — krok 1" },
+  { src: "/images/dilo-z-dilu/Dilo_kovotlaceni_mosaz_kmen+(2).webp", alt: "Kovotlačení — krok 2" },
+  { src: "/images/dilo-z-dilu/Dilo_kovotlaceni_mosaz_kmen+(3).webp", alt: "Kovotlačení — krok 3" },
+  { src: "/images/dilo-z-dilu/Dilo_kovotlaceni_mosaz_kmen+(4).webp", alt: "Kovotlačení — krok 4" },
+  { src: "/images/dilo-z-dilu/Dilo_vyroba_stonek+(1).webp", alt: "Výroba stonku — krok 1" },
+  { src: "/images/dilo-z-dilu/Dilo_vyroba_stonek+(2).webp", alt: "Výroba stonku — krok 2" },
+  { src: "/images/dilo-z-dilu/Dilo_vyroba_stonek+(3).webp", alt: "Výroba stonku — krok 3" },
+  { src: "/images/dilo-z-dilu/Dilo_vyroba_stonek+(4).webp", alt: "Výroba stonku — krok 4" },
+];
+
 export default function DiloZDiluPage() {
   return (
     <article>
@@ -47,6 +65,37 @@ export default function DiloZDiluPage() {
         <Button href="/nezavazna-prihlaska" variant="primary">
           Mám zájem
         </Button>
+      </section>
+
+      {/* Video */}
+      <section className={styles.section}>
+        <div className={styles.videoWrapper}>
+          <iframe
+            src="https://www.youtube.com/embed/t5lrWqeTTw8"
+            title="Dílo z dílů — Future Leader"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className={styles.video}
+          />
+        </div>
+      </section>
+
+      {/* Galerie díla */}
+      <section className={styles.section}>
+        <Heading level={2}>Galerie</Heading>
+        <div className={styles.gallery}>
+          {GALLERY_IMAGES.map((img) => (
+            <div key={img.src} className={styles.galleryItem}>
+              <Image
+                src={img.src}
+                alt={img.alt}
+                width={600}
+                height={400}
+                className={styles.galleryImage}
+              />
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Příběh díla */}
@@ -77,6 +126,24 @@ export default function DiloZDiluPage() {
           </p>
           <cite className={styles.quoteAuthor}>— Anička Štěpánková</cite>
         </blockquote>
+      </section>
+
+      {/* Výroba */}
+      <section className={styles.section}>
+        <Heading level={2}>Proces výroby</Heading>
+        <div className={styles.processGrid}>
+          {PROCESS_IMAGES.map((img) => (
+            <div key={img.src} className={styles.processItem}>
+              <Image
+                src={img.src}
+                alt={img.alt}
+                width={300}
+                height={300}
+                className={styles.processImage}
+              />
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Inspirace */}
@@ -144,29 +211,56 @@ export default function DiloZDiluPage() {
         </Text>
       </div>
 
+      {/* Historie */}
+      <section className={styles.section}>
+        <div className={styles.imageWithCaption}>
+          <Image
+            src="/images/dilo-z-dilu/Lubo_Feher_Dilo-z-Dilu.webp"
+            alt="Ľubomír Fehér přebírá první Dílo z dílů"
+            width={800}
+            height={500}
+            className={styles.fullImage}
+          />
+          <Text size="sm" weight="extralight">
+            Ľubomír Fehér přebírá první Dílo z dílů
+          </Text>
+        </div>
+      </section>
+
       {/* O autorce */}
       <section className={styles.section}>
         <DecorSymbol />
         <Heading level={2}>O autorce</Heading>
         <div className={styles.authorProfile}>
-          <Text>
-            Anna Štěpánková pracuje na pomezí snového umění a funkčního
-            produktového designu. Zmíněná v Forbes. Vytvářela výlohy pro Hermès,
-            instalace pro Czech Grand Design a pražské dekorace ESKU.
-          </Text>
-          <Text>
-            Pragmaticky ukotvená a zároveň volně plynoucí. Vzdušná i zemitá.
-            Hloubavě přemýšlivá. Ryzí a zásadová. Zarputilá a energická — a
-            přitom tak jemná a křehká.
-          </Text>
-          <div className={styles.authorTraits}>
-            <span className={styles.trait}>Neklidný oceán i jemná vlna</span>
-            <span className={styles.trait}>Okouzlující a půvabná</span>
-            <span className={styles.trait}>Nenápadně výrazná</span>
-            <span className={styles.trait}>Měkce strohá</span>
-            <span className={styles.trait}>Elegantně přesná</span>
-            <span className={styles.trait}>Dokonale nedokonalá</span>
-            <span className={styles.trait}>Autenticky svá</span>
+          <div className={styles.authorImageWrapper}>
+            <Image
+              src="/images/dilo-z-dilu/IMG_5253.webp"
+              alt="Anna Štěpánková"
+              width={400}
+              height={400}
+              className={styles.authorImage}
+            />
+          </div>
+          <div className={styles.authorContent}>
+            <Text>
+              Anna Štěpánková pracuje na pomezí snového umění a funkčního
+              produktového designu. Zmíněná v Forbes. Vytvářela výlohy pro Hermès,
+              instalace pro Czech Grand Design a pražské dekorace ESKU.
+            </Text>
+            <Text>
+              Pragmaticky ukotvená a zároveň volně plynoucí. Vzdušná i zemitá.
+              Hloubavě přemýšlivá. Ryzí a zásadová. Zarputilá a energická — a
+              přitom tak jemná a křehká.
+            </Text>
+            <div className={styles.authorTraits}>
+              <span className={styles.trait}>Neklidný oceán i jemná vlna</span>
+              <span className={styles.trait}>Okouzlující a půvabná</span>
+              <span className={styles.trait}>Nenápadně výrazná</span>
+              <span className={styles.trait}>Měkce strohá</span>
+              <span className={styles.trait}>Elegantně přesná</span>
+              <span className={styles.trait}>Dokonale nedokonalá</span>
+              <span className={styles.trait}>Autenticky svá</span>
+            </div>
           </div>
         </div>
       </section>
@@ -175,6 +269,13 @@ export default function DiloZDiluPage() {
       <section className={styles.section}>
         <Heading level={2}>Mise</Heading>
         <div className={styles.missionBox}>
+          <Image
+            src="/images/dilo-z-dilu/FL_1-2_komunita.webp"
+            alt="Future Leader komunita"
+            width={800}
+            height={400}
+            className={styles.missionImage}
+          />
           <Text>
             Fungujeme na principu energie za energii a našich partnerů si
             nesmírně vážíme. Dílo v sobě nese velkou hodnotu a zároveň pomáhá
