@@ -1,15 +1,22 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./Logo.module.css";
 
-type LogoProps = {
-  width?: number;
-  height?: number;
-};
-
-export function Logo({ width = 200, height = 40 }: LogoProps) {
+export function Logo() {
   return (
-    <a href="/" className={styles.logo}>
-      <Image src="/logo.svg" alt="Future Leader" width={width} height={height} priority />
-    </a>
+    <Link href="/" className={styles.logo}>
+      <Image
+        src="/logo-symbol.svg"
+        alt=""
+        width={40}
+        height={37}
+        priority
+        className={styles.symbol}
+      />
+      <span className={styles.text}>
+        <span className={styles.line}>Future</span>
+        <span className={styles.line}>Leader</span>
+      </span>
+    </Link>
   );
 }
