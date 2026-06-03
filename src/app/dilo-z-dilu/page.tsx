@@ -46,10 +46,21 @@ const PROCESS_IMAGES = [
 export default function DiloZDiluPage() {
   return (
     <article>
-      {/* Nadpis + úvod */}
-      <DecorSymbol />
-      <Heading level={1}>Dílo z dílů</Heading>
-      <Text size="lg" weight="extralight" className={styles.heroSubtitle}>
+      {/* Nadpis + dekorativní elipsy */}
+      <div className={styles.titleWrapper}>
+        <Image
+          src="/dilo-ellipses.svg"
+          alt=""
+          width={919}
+          height={479}
+          className={styles.ellipses}
+          aria-hidden="true"
+        />
+        <Heading level={1} className={styles.titleOverlay}>
+          Dílo z dílů<br />harmonie polarit
+        </Heading>
+      </div>
+      <Text size="lg" weight="semibold" className={styles.heroSubtitle}>
         Esence programu Future Leader zhmotněná v autorském díle designérky
         Anny Štěpánkové, absolventky programu.
       </Text>
@@ -151,7 +162,6 @@ export default function DiloZDiluPage() {
 
       {/* Inspirace */}
       <section className={styles.section}>
-        <DecorSymbol />
         <Heading level={2}>Umělecká inspirace</Heading>
         <div className={styles.card}>
           <Text>
@@ -230,7 +240,6 @@ export default function DiloZDiluPage() {
 
       {/* O autorce */}
       <section className={styles.section}>
-        <DecorSymbol />
         <Heading level={2}>O autorce</Heading>
         <div className={styles.authorProfile}>
           <div className={styles.authorImageWrapper}>

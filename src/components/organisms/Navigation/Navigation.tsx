@@ -1,12 +1,13 @@
 import { NavLink } from "@/components/molecules/NavLink/NavLink";
 import styles from "./Navigation.module.css";
+import { Button } from "@/components/atoms/Button/Button";
 
 const NAV_ITEMS = [
   { href: "/", label: "Úvod" },
   { href: "/o-programu", label: "O programu" },
   { href: "/dilo-z-dilu", label: "Dílo z dílů" },
   { href: "/ohlasy", label: "Ohlasy" },
-  { href: "/nezavazna-prihlaska", label: "Přihláška" },
+  // { href: "/nezavazna-prihlaska", label: "Přihláška" },
 ];
 
 export function Navigation() {
@@ -18,6 +19,9 @@ export function Navigation() {
             <NavLink href={item.href}>{item.label}</NavLink>
           </li>
         ))}
+        <li key="/nezavazna-prihlaska">
+            <Button variant="secondary">Toto mě volá</Button>
+        </li>
       </ul>
     </nav>
   );

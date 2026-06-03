@@ -1,3 +1,25 @@
+.titleWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl) 0;
+  margin-bottom: var(--spacing-md);
+}
+
+.ellipses {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+}
+
+.titleOverlay {
+  position: absolute;
+  text-align: center;
+  font-size: 2.5rem;
+  line-height: 1.15;
+}
+
 .heroSubtitle {
   max-width: 700px;
   margin-top: var(--spacing-sm);
@@ -5,6 +27,12 @@
 
 .videoSection {
   margin-top: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .titleOverlay {
+    font-size: 1.75rem;
+  }
 }
 
 .section {
@@ -49,6 +77,7 @@
 .polarity {
   padding: var(--spacing-lg);
   text-align: center;
+  align-content: center;
   font-weight: var(--font-weight-semibold);
   font-size: 0.9375rem;
 }

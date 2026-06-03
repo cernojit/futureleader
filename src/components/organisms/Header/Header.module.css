@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: var(--color-beige);
+  background-color: var(--color-white);
   border-bottom: none;
   height: var(--header-height);
   display: flex;
