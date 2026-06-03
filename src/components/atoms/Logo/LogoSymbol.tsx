@@ -1,11 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import styles from "./Logo.module.css";
 
 const CX = 49.4;
 const CY = 46.1;
-const EXPAND = 0.08;
+const EXPAND = 0.2;
 
 const DOTS: [number, number, number][] = [
   [49.48, 7.22, 2.42],
@@ -83,16 +82,13 @@ const DOTS: [number, number, number][] = [
   [49.48, 85.05, 2.42],
 ];
 
-export function LogoSymbol() {
-  const [hovered, setHovered] = useState(false);
-
+export function LogoSymbol({ hovered }: { hovered: boolean }) {
   return (
     <svg
-      viewBox="0 0 100 92.8"
+      viewBox="-8 -8 116 108.8"
       fill="currentColor"
       className={styles.symbol}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      style={{ overflow: "visible" }}
       aria-hidden="true"
     >
       {DOTS.map(([cx, cy, r], i) => {

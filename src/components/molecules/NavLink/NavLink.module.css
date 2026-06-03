@@ -1,6 +1,6 @@
 .link {
   font-size: 0.9375rem;
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-primary);
   padding: var(--spacing-xs) var(--spacing-sm);
   transition: color 0.2s ease;
@@ -13,6 +13,7 @@
 
 .active {
   font-weight: var(--font-weight-semibold);
+  color: var(--color-accent-coral);
 }
 
 .active::after {

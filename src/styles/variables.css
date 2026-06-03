@@ -1,13 +1,15 @@
 :root {
-  /* Colors */
-  --color-primary: #2d3e3f;
-  --color-accent-coral: #c96b56;
-  --color-accent-yellow: #f0c744;
-  --color-accent-pink: #e8bfb5;
-  --color-accent-grey: #c8c8c8;
+  /* Colors — from brand identity */
+  --color-primary: #273b3f;
+  --color-accent-coral: #cf5a45;
+  --color-accent-yellow: #f5de5b;
+  --color-accent-pink: #f1cec7;
+  --color-accent-pink-light: #f8e6e3;
+  --color-accent-grey: #bec4c5;
+  --color-accent-grey-light: #dfe2e2;
   --color-white: #ffffff;
   --color-bg: #ffffff;
-  --color-text: #2d3e3f;
+  --color-text: #273b3f;
 
   /* Typography */
   --font-weight-extralight: 200;
