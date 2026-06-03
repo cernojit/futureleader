@@ -1,6 +1,5 @@
 .hero {
   background-color: var(--color-white);
-  border-radius: var(--radius-lg);
   padding: var(--spacing-2xl) var(--spacing-xl);
   margin-bottom: var(--spacing-xl);
 }
@@ -23,7 +22,6 @@
 
 .card {
   background-color: var(--color-white);
-  border-radius: var(--radius-lg);
   padding: var(--spacing-xl);
   display: flex;
   flex-direction: column;
@@ -36,7 +34,6 @@
   margin: var(--spacing-sm) 0;
   font-style: italic;
   background-color: var(--color-white);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
 
 .quoteAuthor {
@@ -47,6 +44,7 @@
   color: var(--color-accent-coral);
 }
 
+/* Polarity boxes — each in a different brand color */
 .polarities {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -55,32 +53,64 @@
 }
 
 .polarity {
-  background-color: var(--color-white);
-  padding: var(--spacing-md) var(--spacing-lg);
-  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
   text-align: center;
-  font-weight: var(--font-weight-regular);
-  color: var(--color-primary);
-  border: 1px solid var(--color-accent-pink);
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.9375rem;
 }
 
+.polarity:nth-child(1) {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.polarity:nth-child(2) {
+  background-color: var(--color-accent-coral);
+  color: var(--color-white);
+}
+
+.polarity:nth-child(3) {
+  background-color: var(--color-accent-yellow);
+  color: var(--color-primary);
+}
+
+.polarity:nth-child(4) {
+  background-color: var(--color-accent-pink);
+  color: var(--color-primary);
+}
+
+.polarity:nth-child(5) {
+  background-color: var(--color-accent-grey);
+  color: var(--color-primary);
+}
+
+.polarity:nth-child(6) {
+  background-color: var(--color-primary);
+  color: var(--color-accent-yellow);
+}
+
+/* Statement — larger text, more breathing room */
 .statement {
   text-align: center;
   padding: var(--spacing-2xl) var(--spacing-xl);
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  border-radius: var(--radius-lg);
   margin: var(--spacing-xl) 0;
 }
 
 .statementLine {
   display: block;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+
+.statementLine:last-child {
+  font-size: 2rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-accent-coral);
 }
 
 .authorProfile {
   background-color: var(--color-white);
-  border-radius: var(--radius-lg);
   padding: var(--spacing-xl);
   display: flex;
   flex-direction: column;
@@ -94,18 +124,22 @@
 }
 
 .trait {
-  background-color: var(--color-accent-yellow);
-  color: var(--color-primary);
+  background-color: var(--color-accent-coral);
+  color: var(--color-white);
   padding: var(--spacing-xs) var(--spacing-md);
   border-radius: 999px;
   font-size: 0.875rem;
   font-weight: var(--font-weight-semibold);
 }
 
+.trait:nth-child(even) {
+  background-color: var(--color-accent-grey);
+  color: var(--color-primary);
+}
+
 .missionBox {
   background-color: var(--color-white);
   padding: var(--spacing-xl);
-  border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
@@ -117,7 +151,6 @@
   position: relative;
   width: 100%;
   padding-bottom: 56.25%; /* 16:9 */
-  border-radius: var(--radius-lg);
   overflow: hidden;
   background-color: var(--color-primary);
 }
@@ -139,7 +172,6 @@
 }
 
 .galleryItem {
-  border-radius: var(--radius-lg);
   overflow: hidden;
   background-color: var(--color-white);
 }
@@ -158,7 +190,6 @@
 }
 
 .processItem {
-  border-radius: var(--radius-md);
   overflow: hidden;
   background-color: var(--color-white);
 }
@@ -180,7 +211,6 @@
 .fullImage {
   width: 100%;
   height: auto;
-  border-radius: var(--radius-lg);
   object-fit: cover;
 }
 
@@ -210,7 +240,6 @@
 .missionImage {
   width: 100%;
   height: auto;
-  border-radius: var(--radius-md);
   object-fit: cover;
 }
 
@@ -245,5 +274,13 @@
 
   .processImage {
     height: 150px;
+  }
+
+  .statementLine {
+    font-size: 1.125rem;
+  }
+
+  .statementLine:last-child {
+    font-size: 1.5rem;
   }
 }

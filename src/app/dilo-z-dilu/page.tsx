@@ -203,13 +203,11 @@ export default function DiloZDiluPage() {
       </section>
 
       {/* Statement */}
-      <div className={styles.statement}>
-        <Text size="lg" weight="semibold">
-          <span className={styles.statementLine}>Dílo z dílů je o harmonii polarit a o stabilitě v pohybu.</span>
-          <span className={styles.statementLine}>Dílo z dílů je o životě.</span>
-          <span className={styles.statementLine}>Dílo z dílů je o nás.</span>
-        </Text>
-      </div>
+      <section className={styles.statement}>
+        <span className={styles.statementLine}>Dílo z dílů je o harmonii polarit a o stabilitě v pohybu.</span>
+        <span className={styles.statementLine}>Dílo z dílů je o životě.</span>
+        <span className={styles.statementLine}>Dílo z dílů je o nás.</span>
+      </section>
 
       {/* Historie */}
       <section className={styles.section}>
