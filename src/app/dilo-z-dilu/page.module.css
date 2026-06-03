@@ -1,34 +1,17 @@
 .hero {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  background-color: var(--color-white);
   border-radius: var(--radius-lg);
   padding: var(--spacing-2xl) var(--spacing-xl);
   margin-bottom: var(--spacing-xl);
-  position: relative;
-  overflow: hidden;
 }
 
 .heroSubtitle {
-  color: var(--color-white);
-  opacity: 0.9;
   max-width: 700px;
 }
 
 .heroText {
-  color: var(--color-white);
-  opacity: 0.85;
   max-width: 700px;
-}
-
-.heroDecor {
-  position: absolute;
-  top: -80px;
-  right: -80px;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background-color: var(--color-accent-coral);
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
 .section {
@@ -38,12 +21,21 @@
   gap: var(--spacing-md);
 }
 
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
 .quote {
   border-left: 4px solid var(--color-accent-coral);
   padding: var(--spacing-lg) var(--spacing-xl);
-  margin: var(--spacing-md) 0;
+  margin: var(--spacing-sm) 0;
   font-style: italic;
-  background-color: var(--color-accent-pink-light);
+  background-color: var(--color-white);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
 
@@ -52,6 +44,7 @@
   font-weight: var(--font-weight-semibold);
   margin-top: var(--spacing-sm);
   display: block;
+  color: var(--color-accent-coral);
 }
 
 .polarities {
@@ -62,17 +55,18 @@
 }
 
 .polarity {
-  background-color: var(--color-accent-pink-light);
+  background-color: var(--color-white);
   padding: var(--spacing-md) var(--spacing-lg);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   text-align: center;
   font-weight: var(--font-weight-regular);
   color: var(--color-primary);
+  border: 1px solid var(--color-accent-pink);
 }
 
 .statement {
   text-align: center;
-  padding: var(--spacing-xl);
+  padding: var(--spacing-2xl) var(--spacing-xl);
   background-color: var(--color-primary);
   color: var(--color-white);
   border-radius: var(--radius-lg);
@@ -85,6 +79,9 @@
 }
 
 .authorProfile {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
@@ -106,16 +103,21 @@
 }
 
 .missionBox {
-  background-color: var(--color-accent-pink-light);
+  background-color: var(--color-white);
   padding: var(--spacing-xl);
   border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
+  border-left: 4px solid var(--color-accent-coral);
 }
 
-.ctaButton {
-  align-self: flex-start;
+.decorSymbol {
+  color: var(--color-accent-coral);
+  width: 40px;
+  height: auto;
+  opacity: 0.6;
+  margin-bottom: var(--spacing-sm);
 }
 
 @media (max-width: 768px) {

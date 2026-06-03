@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Heading } from "@/components/atoms/Heading/Heading";
 import { Text } from "@/components/atoms/Text/Text";
 import { Button } from "@/components/atoms/Button/Button";
@@ -11,15 +12,26 @@ export const metadata: Metadata = {
     "Esence programu Future Leader zhmotněná v autorském díle designérky Anny Štěpánkové. Umělecké dílo inspirované kinetickým uměním.",
 };
 
+function DecorSymbol() {
+  return (
+    <Image
+      src="/logo-symbol.svg"
+      alt=""
+      width={40}
+      height={37}
+      className={styles.decorSymbol}
+      aria-hidden="true"
+    />
+  );
+}
+
 export default function DiloZDiluPage() {
   return (
     <article>
       {/* Hero */}
       <section className={styles.hero}>
-        <div className={styles.heroDecor} aria-hidden="true" />
-        <Heading level={1} className={styles.heroSubtitle}>
-          Dílo z dílů
-        </Heading>
+        <DecorSymbol />
+        <Heading level={1}>Dílo z dílů</Heading>
         <Text size="lg" weight="extralight" className={styles.heroSubtitle}>
           Esence programu Future Leader zhmotněná v autorském díle designérky
           Anny Štěpánkové, absolventky programu.
@@ -40,12 +52,14 @@ export default function DiloZDiluPage() {
       {/* Příběh díla */}
       <section className={styles.section}>
         <Heading level={2}>Příběh díla</Heading>
-        <Text>
-          Každý z absolventů a lektorů programu Future Leader přispěl ke vzniku
-          Díla svým kouskem a svým unikátním způsobem. To, že se Dílo teď
-          dostává k vám, je výsledkem stovek hodin práce a nese kousek energie
-          každého z nich.
-        </Text>
+        <div className={styles.card}>
+          <Text>
+            Každý z absolventů a lektorů programu Future Leader přispěl ke vzniku
+            Díla svým kouskem a svým unikátním způsobem. To, že se Dílo teď
+            dostává k vám, je výsledkem stovek hodin práce a nese kousek energie
+            každého z nich.
+          </Text>
+        </div>
 
         <blockquote className={styles.quote}>
           <p>
@@ -67,13 +81,16 @@ export default function DiloZDiluPage() {
 
       {/* Inspirace */}
       <section className={styles.section}>
+        <DecorSymbol />
         <Heading level={2}>Umělecká inspirace</Heading>
-        <Text>
-          Autorka čerpala inspiraci z kinetického umění Alexandra Caldera,
-          známého svými mobily, jejichž části se dávají do pohybu prouděním
-          vzduchu nebo dotykem. Přinášejí radost a energii do prostoru a nesou
-          sdělení o autenticitě a správném načasování.
-        </Text>
+        <div className={styles.card}>
+          <Text>
+            Autorka čerpala inspiraci z kinetického umění Alexandra Caldera,
+            známého svými mobily, jejichž části se dávají do pohybu prouděním
+            vzduchu nebo dotykem. Přinášejí radost a energii do prostoru a nesou
+            sdělení o autenticitě a správném načasování.
+          </Text>
+        </div>
 
         <Heading level={3}>Harmonie polarit</Heading>
         <div className={styles.polarities}>
@@ -93,11 +110,13 @@ export default function DiloZDiluPage() {
       {/* Jedinečnost */}
       <section className={styles.section}>
         <Heading level={2}>Každé dílo je jedinečné</Heading>
-        <Text>
-          Každé Dílo je jedinečné a v budoucnu se může jeho podoba proměňovat
-          stejně jako se proměňujeme my a svět kolem nás. Kouskem bude stále
-          stejné a zároveň pokaždé jiné. Tak jako my lidé.
-        </Text>
+        <div className={styles.card}>
+          <Text>
+            Každé Dílo je jedinečné a v budoucnu se může jeho podoba proměňovat
+            stejně jako se proměňujeme my a svět kolem nás. Kouskem bude stále
+            stejné a zároveň pokaždé jiné. Tak jako my lidé.
+          </Text>
+        </div>
 
         <blockquote className={styles.quote}>
           <p>
@@ -127,6 +146,7 @@ export default function DiloZDiluPage() {
 
       {/* O autorce */}
       <section className={styles.section}>
+        <DecorSymbol />
         <Heading level={2}>O autorce</Heading>
         <div className={styles.authorProfile}>
           <Text>
@@ -182,11 +202,13 @@ export default function DiloZDiluPage() {
       {/* Kontakt */}
       <section className={styles.section}>
         <Heading level={2}>Kontakt</Heading>
-        <ContactInfo
-          name="Ivana Sládková"
-          email="info@futureleader.cz"
-          phone="+420 724 030 480"
-        />
+        <div className={styles.card}>
+          <ContactInfo
+            name="Ivana Sládková"
+            email="info@futureleader.cz"
+            phone="+420 724 030 480"
+          />
+        </div>
       </section>
     </article>
   );

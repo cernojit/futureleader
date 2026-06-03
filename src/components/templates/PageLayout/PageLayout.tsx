@@ -8,10 +8,13 @@ type PageLayoutProps = {
 
 export function PageLayout({ children }: PageLayoutProps) {
   return (
-    <>
+    <div className={styles.page}>
+      {/* Decorative coral circles from brand identity */}
+      <div className={styles.decorTopLeft} aria-hidden="true" />
+      <div className={styles.decorBottomRight} aria-hidden="true" />
       <Header />
       <main className={styles.main}>{children}</main>
       <Footer />
-    </>
+    </div>
   );
 }
