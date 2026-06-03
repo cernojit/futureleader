@@ -46,29 +46,16 @@ const PROCESS_IMAGES = [
 export default function DiloZDiluPage() {
   return (
     <article>
-      {/* Hero */}
-      <section className={styles.hero}>
-        <DecorSymbol />
-        <Heading level={1}>Dílo z dílů</Heading>
-        <Text size="lg" weight="extralight" className={styles.heroSubtitle}>
-          Esence programu Future Leader zhmotněná v autorském díle designérky
-          Anny Štěpánkové, absolventky programu.
-        </Text>
-        <Text className={styles.heroText}>
-          Dílo z dílů není jen uměleckým předmětem, je to zhmotnění energie
-          Future Leadera a myšlenek nové doby. Přináší zprávu o harmonii polarit,
-          o hledání rovnováhy a o všem, co může vzniknout propojením rozmanitých
-          energií v jeden celek. Nese s sebou příběhy, které mohou inspirovat
-          každého z nás, a zároveň svou přítomností a pohybem i další příběhy
-          vytváří.
-        </Text>
-        <Button href="/nezavazna-prihlaska" variant="primary">
-          Mám zájem
-        </Button>
-      </section>
+      {/* Nadpis + úvod */}
+      <DecorSymbol />
+      <Heading level={1}>Dílo z dílů</Heading>
+      <Text size="lg" weight="extralight" className={styles.heroSubtitle}>
+        Esence programu Future Leader zhmotněná v autorském díle designérky
+        Anny Štěpánkové, absolventky programu.
+      </Text>
 
       {/* Video */}
-      <section className={styles.section}>
+      <section className={styles.videoSection}>
         <div className={styles.videoWrapper}>
           <iframe
             src="https://www.youtube.com/embed/t5lrWqeTTw8"
@@ -80,9 +67,25 @@ export default function DiloZDiluPage() {
         </div>
       </section>
 
+      {/* Popis + CTA */}
+      <section className={styles.section}>
+        <Text>
+          Dílo z dílů není jen uměleckým předmětem, je to zhmotnění energie
+          Future Leadera a myšlenek nové doby. Přináší zprávu o harmonii polarit,
+          o hledání rovnováhy a o všem, co může vzniknout propojením rozmanitých
+          energií v jeden celek. Nese s sebou příběhy, které mohou inspirovat
+          každého z nás, a zároveň svou přítomností a pohybem i další příběhy
+          vytváří.
+        </Text>
+        <div>
+          <Button href="/nezavazna-prihlaska" variant="primary">
+            Mám zájem
+          </Button>
+        </div>
+      </section>
+
       {/* Galerie díla */}
       <section className={styles.section}>
-        <Heading level={2}>Galerie</Heading>
         <div className={styles.gallery}>
           {GALLERY_IMAGES.map((img) => (
             <div key={img.src} className={styles.galleryItem}>
