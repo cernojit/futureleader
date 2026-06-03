@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { PageLayout } from "@/components/templates/PageLayout/PageLayout";
 import "@/styles/globals.css";
 
 const poppins = Poppins({
@@ -30,7 +31,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="cs" className={poppins.variable}>
-      <body>{children}</body>
+      <body>
+        <PageLayout>{children}</PageLayout>
+      </body>
     </html>
   );
 }
