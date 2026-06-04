@@ -5,6 +5,7 @@ type ButtonProps = {
   variant?: "primary" | "secondary";
   href?: string;
   type?: "button" | "submit";
+  active?: boolean;
   onClick?: () => void;
 };
 
@@ -13,9 +14,10 @@ export function Button({
   variant = "primary",
   href,
   type = "button",
+  active = false,
   onClick,
 }: ButtonProps) {
-  const className = `${styles.button} ${styles[variant]}`;
+  const className = `${styles.button} ${styles[variant]} ${active ? styles.active : ""}`;
 
   if (href) {
     return (

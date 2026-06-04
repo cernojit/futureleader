@@ -18,7 +18,30 @@
 }
 
 .secondary {
+  position: relative;
   background-color: transparent;
   color: var(--color-primary);
   border: 2px solid var(--color-primary);
+}
+
+.secondary::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border: 2px solid var(--color-accent-coral);
+  border-radius: inherit;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.4s ease;
+  pointer-events: none;
+}
+
+.secondary:hover::before,
+.secondary.active::before {
+  clip-path: inset(0 0 0 0);
+}
+
+.secondary:hover,
+.secondary.active {
+  color: var(--color-accent-coral);
+  opacity: 1;
 }
