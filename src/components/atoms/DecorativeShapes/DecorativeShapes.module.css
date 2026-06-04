@@ -1,0 +1,35 @@
+.wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  animation: drift var(--duration, 10s) ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(var(--dx, 0px), var(--dy, 0px));
+  }
+}
+
+.circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color-accent-coral);
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  /* #cf5a45 coral via CSS filter on black SVG */
+  filter: invert(42%) sepia(50%) saturate(1200%) hue-rotate(338deg) brightness(85%) contrast(90%);
+}

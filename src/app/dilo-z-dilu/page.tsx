@@ -4,6 +4,7 @@ import { Heading } from "@/components/atoms/Heading/Heading";
 import { Text } from "@/components/atoms/Text/Text";
 import { Button } from "@/components/atoms/Button/Button";
 import { ContactInfo } from "@/components/molecules/ContactInfo/ContactInfo";
+import { Divider } from "@/components/atoms/Divider/Divider";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -65,11 +66,11 @@ export default function DiloZDiluPage() {
         Anny Štěpánkové, absolventky programu.
       </Text>
 
-      {/* Video */}
+      {/* Video background */}
       <section className={styles.videoSection}>
         <div className={styles.videoWrapper}>
           <iframe
-            src="https://www.youtube.com/embed/t5lrWqeTTw8"
+            src="https://www.youtube.com/embed/t5lrWqeTTw8?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&modestbranding=1&playlist=t5lrWqeTTw8"
             title="Dílo z dílů — Future Leader"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -77,6 +78,8 @@ export default function DiloZDiluPage() {
           />
         </div>
       </section>
+
+      <Divider />
 
       {/* Popis + CTA */}
       <section className={styles.section}>
@@ -95,6 +98,8 @@ export default function DiloZDiluPage() {
         </div>
       </section>
 
+      <Divider />
+
       {/* Galerie díla */}
       <section className={styles.section}>
         <div className={styles.gallery}>
@@ -111,6 +116,8 @@ export default function DiloZDiluPage() {
           ))}
         </div>
       </section>
+
+      <Divider />
 
       {/* Příběh díla */}
       <section className={styles.section}>
@@ -142,6 +149,8 @@ export default function DiloZDiluPage() {
         </blockquote>
       </section>
 
+      <Divider />
+
       {/* Výroba */}
       <section className={styles.section}>
         <Heading level={2}>Proces výroby</Heading>
@@ -159,6 +168,8 @@ export default function DiloZDiluPage() {
           ))}
         </div>
       </section>
+
+      <Divider />
 
       {/* Inspirace */}
       <section className={styles.section}>
@@ -186,6 +197,8 @@ export default function DiloZDiluPage() {
           Dílo z dílů zosobňuje promyšlenou jednoduchost.
         </Text>
       </section>
+
+      <Divider />
 
       {/* Jedinečnost */}
       <section className={styles.section}>
@@ -222,6 +235,8 @@ export default function DiloZDiluPage() {
         <span className={styles.statementLine}>Dílo z dílů je o nás.</span>
       </section>
 
+      <Divider />
+
       {/* Historie */}
       <section className={styles.section}>
         <div className={styles.imageWithCaption}>
@@ -237,6 +252,8 @@ export default function DiloZDiluPage() {
           </Text>
         </div>
       </section>
+
+      <Divider />
 
       {/* O autorce */}
       <section className={styles.section}>
@@ -275,6 +292,8 @@ export default function DiloZDiluPage() {
         </div>
       </section>
 
+      <Divider />
+
       {/* Mise */}
       <section className={styles.section}>
         <Heading level={2}>Mise</Heading>
@@ -309,6 +328,8 @@ export default function DiloZDiluPage() {
           </Text>
         </div>
       </section>
+
+      <Divider />
 
       {/* Kontakt */}
       <section className={styles.section}>
