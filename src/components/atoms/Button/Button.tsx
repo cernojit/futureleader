@@ -1,12 +1,12 @@
 import styles from "./Button.module.css";
 
 type ButtonProps = {
-  children: React.ReactNode;
-  variant?: "primary" | "secondary";
-  href?: string;
-  type?: "button" | "submit";
-  active?: boolean;
-  onClick?: () => void;
+  readonly children: React.ReactNode;
+  readonly variant?: "primary" | "secondary";
+  readonly href?: string;
+  readonly type?: "button" | "submit";
+  readonly active?: boolean;
+  readonly onClick?: () => void;
 };
 
 export function Button({
@@ -21,7 +21,7 @@ export function Button({
 
   if (href) {
     return (
-      <a href={href} className={className}>
+      <a href={href} className={className} onClick={onClick}>
         {children}
       </a>
     );

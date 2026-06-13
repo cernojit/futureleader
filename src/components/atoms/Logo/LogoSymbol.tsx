@@ -82,13 +82,18 @@ const DOTS: [number, number, number][] = [
   [49.48, 85.05, 2.42],
 ];
 
-export function LogoSymbol({ hovered }: { hovered: boolean }) {
+interface LogoSymbolProps {
+  readonly hovered: boolean;
+  readonly color?: React.CSSProperties["color"];
+}
+
+export function LogoSymbol({ hovered, color }: LogoSymbolProps) {
   return (
     <svg
       viewBox="-8 -8 116 108.8"
       fill="currentColor"
       className={styles.symbol}
-      style={{ overflow: "visible" }}
+      style={{ overflow: "visible", color }}
       aria-hidden="true"
     >
       {DOTS.map(([cx, cy, r], i) => {

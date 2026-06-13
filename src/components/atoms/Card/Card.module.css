@@ -1,0 +1,29 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  color: var(--color-primary);
+}
+
+.section {
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.sectionHeader {
+  padding: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+}
+
+.picture {
+  width: 100%;
+}
+
+.picture :global(img),
+.picture :global(video),
+.picture :global(iframe) {
+  display: block;
+  width: 100%;
+  height: auto;
+}

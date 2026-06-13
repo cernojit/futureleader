@@ -79,8 +79,6 @@ export default function DiloZDiluPage() {
         </div>
       </section>
 
-      <Divider />
-
       {/* Popis + CTA */}
       <section className={styles.section}>
         <Text>

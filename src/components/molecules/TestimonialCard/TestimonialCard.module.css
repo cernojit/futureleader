@@ -1,14 +1,11 @@
 .card {
-  padding: var(--spacing-lg);
-  background-color: var(--color-white);
-  border-radius: var(--radius-lg);
   color: var(--color-primary);
 }
 
 .quote {
   font-size: 1rem;
   line-height: 1.7;
-  margin-bottom: var(--spacing-md);
+  margin: 0;
 }
 
 .footer {

@@ -10,7 +10,7 @@ type PageLayoutProps = {
 export function PageLayout({ children }: PageLayoutProps) {
   return (
     <div className={styles.page}>
-      <DecorativeShapes />
+      {/* <DecorativeShapes /> */}
       <Header />
       <main className={styles.main}>{children}</main>
       <Footer />
