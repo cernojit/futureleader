@@ -235,24 +235,6 @@ export default function DiloZDiluPage() {
 
       <Divider />
 
-      {/* Historie */}
-      <section className={styles.section}>
-        <div className={styles.imageWithCaption}>
-          <Image
-            src="/images/dilo-z-dilu/Lubo_Feher_Dilo-z-Dilu.webp"
-            alt="Ľubomír Fehér přebírá první Dílo z dílů"
-            width={800}
-            height={500}
-            className={styles.fullImage}
-          />
-          <Text size="sm" weight="extralight">
-            Ľubomír Fehér přebírá první Dílo z dílů
-          </Text>
-        </div>
-      </section>
-
-      <Divider />
-
       {/* O autorce */}
       <section className={styles.section}>
         <Heading level={2}>O autorce</Heading>

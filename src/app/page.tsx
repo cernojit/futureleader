@@ -5,41 +5,7 @@ import { Divider } from "@/components/atoms/Divider/Divider";
 import { Text } from "@/components/atoms/Text/Text";
 import { LogoSymbol } from "@/components/atoms/Logo/LogoSymbol";
 import { Card } from "@/components/atoms/Card/Card";
-
-const BENEFITS = [
-  {
-    title: "Větší jasno v sobě",
-    description: "Pochopíte své vzorce, silné stránky i to, co vás brzdí.",
-  },
-  {
-    title: "Autentičtější leadership a schopnost vést zdravě",
-    description:
-      "Naučíte se vést druhé přirozeně, bez masek a tlaku. Naučíte se vytvářet bezpečné prostředí pro druhé bez vyčerpání sebe sama.",
-  },
-  {
-    title: "Vnitřní stabilitu a jistotu",
-    description:
-      "Opřete se více o sebe, svou intuici a vlastní kompas. Přestanete hledat odpovědi jen venku a začnete více důvěřovat sobě.",
-  },
-  {
-    title: "Jasnější směr",
-    description:
-      "Ujasníte si další pracovní i osobní kroky. Ujasníte si, co opravdu chcete tvořit, v práci i v životě.",
-  },
-  {
-    title: "Komunitu",
-    description:
-      "Potkáte lidi, kteří chtějí tvořit podobně jako vy. Lidi, se kterými nemusíte nic hrát. Propojení na hlubší úrovni.",
-  },
-  {
-    title: "Hlubší vztahy",
-    description: "K sobě, k lidem kolem i ke své práci.",
-  },
-  {
-    title: "Praktické zkušenosti",
-    description: "Program je postavený na prožitku, sdílení a reálném životě.",
-  },
-] as const;
+import { HeartbeatSignupLogo } from "@/components/molecules/HeartbeatSignupLogo/HeartbeatSignupLogo";
 
 const PROGRAM_TOPICS = [
   "Autenticita a identita lídra",
@@ -73,6 +39,10 @@ const PHILOSOPHY_VALUES = [
 export default function HomePage() {
   return (
     <>
+      <div className={styles.stickySignupCta}>
+        <HeartbeatSignupLogo className={styles.stickySignupLogo} />
+      </div>
+
       <section className={styles.sectionHeroImage}>
         <div className={styles.sectionHeroImageInner}>
           <Heading level={1} className={styles.heroImageText}>Leadership nové generace začíná uvnitř</Heading>
@@ -88,11 +58,58 @@ export default function HomePage() {
         <Heading level={3}>10 let zkušeností • 4 víkendová setkání • komunita absolventů</Heading>
         <div className={styles.polarities}>
           <div className={styles.polarity}>10 let zkušeností</div>
-          <div className={styles.polarity}>4 víkendová setkání</div>
+          <div className={styles.polarity}>4 prodloužené víkendy</div>
           <div className={styles.polarity}>komunita absolventů</div>
         </div>
       </section>
+
       <Divider />
+
+       <section className={styles.section}>
+        <Heading level={2} className={styles.headingWithLogo}>
+          <LogoSymbol hovered={false} color="currentColor" />
+          <span>Filozofie programu</span>
+        </Heading>
+        <div className={styles.philosophyLayout}>
+          <Card
+            className={styles.philosophyLeadCard}
+            header={<Heading level={3}>Nevěříme na dokonalé lídry.</Heading>}
+            text={
+              <>
+                <Text>Věříme v lidi, kteří:</Text>
+                <ul className={`${styles.bulletList} ${styles.philosophyList}`}>
+                  {PHILOSOPHY_VALUES.map((value) => (
+                    <li key={value}>{value}</li>
+                  ))}
+                </ul>
+                <Text>
+                  Nevedeme účastníky k výkonu za každou cenu. Vedeme je k větší
+                  pravdivosti, odvaze a schopnosti být v kontaktu sami se sebou i s druhými.
+                </Text>
+                <Text>
+                  Protože právě odtud vzniká leadership, který má skutečný dopad.
+                </Text>
+              </>
+            }
+          />
+          <aside className={styles.philosophyQuote}>
+            <span className={styles.philosophyKicker}>Věříme, že…</span>
+            <Heading level={3}>člověk nemusí být opraven, aby mohl zářit.</Heading>
+            <Text>
+              Vedeme účastníky k přijetí sebe sama ve všech svých barvách,
+              emocích i nedokonalostech.
+            </Text>
+            <Text>
+              Protože právě odtud vzniká autentické vedení, zdravé vztahy a
+              smysluplné tvoření.
+            </Text>
+          </aside>
+        </div>
+
+      </section>
+
+      <Divider />
+
       <section className={styles.section}>
         <Heading level={2} className={styles.headingWithLogo}>
           <LogoSymbol hovered={false} color="currentColor" />
@@ -196,29 +213,6 @@ export default function HomePage() {
       <section className={styles.section}>
         <Heading level={2} className={styles.headingWithLogo}>
           <LogoSymbol hovered={false} color="currentColor" />
-          <span>Co vám program přinese</span>
-        </Heading>
-        <Heading level={4}>
-          Ne další sadu technik, ale posun, který se propíše do toho, jak žijete,
-          vedete a tvoříte.
-        </Heading>
-        <div className={styles.benefitsGrid}>
-          {BENEFITS.map((benefit) => (
-            <Card
-              key={benefit.title}
-              className={styles.benefitCard}
-              header={<Heading level={3}>{benefit.title}</Heading>}
-              text={<Text>{benefit.description}</Text>}
-            />
-          ))}
-        </div>
-      </section>
-
-      <Divider />
-
-      <section className={styles.section}>
-        <Heading level={2} className={styles.headingWithLogo}>
-          <LogoSymbol hovered={false} color="currentColor" />
           <span>Jak program probíhá</span>
         </Heading>
         <div className={styles.programIntro}>
@@ -275,45 +269,33 @@ export default function HomePage() {
 
       <Divider />
 
-      <section className={styles.section}>
-        <Heading level={2} className={styles.headingWithLogo}>
-          <LogoSymbol hovered={false} color="currentColor" />
-          <span>Filozofie programu</span>
-        </Heading>
-        <div className={styles.philosophyLayout}>
-          <Card
-            className={styles.philosophyLeadCard}
-            header={<Heading level={3}>Nevěříme na dokonalé lídry.</Heading>}
-            text={
-              <>
-                <Text>Věříme v lidi, kteří:</Text>
-                <ul className={`${styles.bulletList} ${styles.philosophyList}`}>
-                  {PHILOSOPHY_VALUES.map((value) => (
-                    <li key={value}>{value}</li>
-                  ))}
-                </ul>
-                <Text>
-                  Nevedeme účastníky k výkonu za každou cenu. Vedeme je k větší
-                  pravdivosti, odvaze a schopnosti být v kontaktu sami se sebou i s druhými.
-                </Text>
-                <Text>
-                  Protože právě odtud vzniká leadership, který má skutečný dopad.
-                </Text>
-              </>
-            }
-          />
-          <aside className={styles.philosophyQuote}>
-            <span className={styles.philosophyKicker}>Věříme, že…</span>
-            <Heading level={3}>člověk nemusí být opraven, aby mohl zářit.</Heading>
-            <Text>
-              Vedeme účastníky k přijetí sebe sama ve všech svých barvách,
-              emocích i nedokonalostech.
-            </Text>
-            <Text>
-              Protože právě odtud vzniká autentické vedení, zdravé vztahy a
-              smysluplné tvoření.
-            </Text>
-          </aside>
+      <section className={styles.topicMosaicSection}>
+        <div className={styles.topicMosaicInner}>
+          <Heading level={2} className={styles.headingWithLogo}>
+            <LogoSymbol hovered={false} color="currentColor" />
+            <span>Témata programu</span>
+          </Heading>
+          <div className={styles.topicMosaic}>
+            <div className={styles.mosaicWords}>
+              {PROGRAM_TOPICS.map((topic, index) => {
+                const wordSizeClass = `mosaicWord${index % 4}`;
+
+                return (
+                  <span key={topic} className={`${styles.mosaicWord} ${styles[wordSizeClass]}`}>
+                    {topic}
+                  </span>
+                );
+              })}
+            </div>
+            <div className={`${styles.mosaicTile} ${styles.mosaicTopLeft} ${styles.mosaicCoral}`} />
+            <div className={`${styles.mosaicTile} ${styles.mosaicTopMid} ${styles.mosaicBeige}`} />
+            <div className={`${styles.mosaicTile} ${styles.mosaicTopRight} ${styles.mosaicYellow}`} />
+            <div className={`${styles.mosaicTile} ${styles.mosaicLeftMid} ${styles.mosaicGrey}`} />
+            <div className={`${styles.mosaicTile} ${styles.mosaicRightMid} ${styles.mosaicPink}`} />
+            <div className={`${styles.mosaicTile} ${styles.mosaicBottomLeft} ${styles.mosaicYellow}`} />
+            <div className={`${styles.mosaicTile} ${styles.mosaicBottomMid} ${styles.mosaicCoral}`} />
+            <div className={`${styles.mosaicTile} ${styles.mosaicBottomRight} ${styles.mosaicBeige}`} />
+          </div>
         </div>
       </section>
 
