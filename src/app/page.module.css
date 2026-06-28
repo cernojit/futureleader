@@ -117,6 +117,23 @@
   font-size: 0.9375rem;
 }
 
+.polarityLink {
+  display: block;
+  text-decoration: none;
+  transform-origin: center;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.polarityLink:hover {
+  transform: scale(1.03);
+  filter: brightness(0.97);
+}
+
+.polarityLink:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
 .polarity:nth-child(1) {
   background-color: var(--color-primary);
   color: var(--color-white);

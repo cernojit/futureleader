@@ -117,9 +117,9 @@ export default function HomePage() {
         <Heading level={2}>Transformační program pro ty, kteří chtějí vést autenticky — sebe, vztahy, práci i život.</Heading>
         {/* <Heading level={3}>10 let zkušeností • 4 víkendová setkání • komunita absolventů</Heading> */}
         <div className={styles.polarities}>
-          <div className={styles.polarity}>10 let zkušeností</div>
-          <div className={styles.polarity}>4 prodloužené víkendy</div>
-          <div className={styles.polarity}>komunita absolventů</div>
+          <a href="/nas-tym" className={`${styles.polarity} ${styles.polarityLink}`}>10 let zkušeností</a>
+          <a href="#terminy-programu" className={`${styles.polarity} ${styles.polarityLink}`}>4 prodloužené víkendy</a>
+          <a href="/komunita" className={`${styles.polarity} ${styles.polarityLink}`}>komunita absolventů</a>
         </div>
       </section>
 
@@ -139,7 +139,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={styles.programDatesSection}>
+      <section id="terminy-programu" className={styles.programDatesSection}>
         <div className={styles.programDatesInner}>
           <Heading level={3} className={styles.programDatesHeading}>Termíny programu</Heading>
           <div className={styles.programDatesGrid}>

@@ -37,6 +37,71 @@
   font-weight: var(--font-weight-semibold);
 }
 
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.audienceLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+  gap: var(--spacing-lg);
+  align-items: stretch;
+  margin-top: var(--spacing-md);
+}
+
+.audienceCard {
+  box-shadow: 0 20px 48px rgba(31, 44, 92, 0.08);
+}
+
+.audienceList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-sm) var(--spacing-lg);
+}
+
+.audienceMeta {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: linear-gradient(135deg, rgba(237, 124, 79, 0.12), rgba(220, 184, 65, 0.18));
+  border-radius: var(--radius-md);
+}
+
+.audienceMetaLabel {
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+
+.audienceMetaValue {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-semibold);
+}
+
+.audienceAside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-lg);
+  background-color: rgba(31, 44, 92, 0.06);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(31, 44, 92, 0.08);
+}
+
+.audienceAsideKicker {
+  font-size: 0.8125rem;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-coral);
+}
+
 .benefitsGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -169,6 +234,15 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .cards,
+  .audienceLayout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .audienceLayout {
+    grid-template-columns: 1fr;
+  }
+
   .programGrid {
     grid-template-columns: 1fr;
   }
@@ -180,6 +254,11 @@
 
 @media (max-width: 768px) {
   .benefitsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards,
+  .audienceList {
     grid-template-columns: 1fr;
   }
 

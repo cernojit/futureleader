@@ -12,12 +12,14 @@ export default function KomunitaPage() {
   return (
     <>
       <section className={styles.hero}>
-        <span className={styles.eyebrow}>Komunita absolventů</span>
-        <Heading level={1}>Future Leader nekončí posledním víkendem</Heading>
-        <Text size="lg" weight="extralight" className={styles.lead}>
-          Absolventi vstupují do komunity lidí, kteří se podporují, propojují a
-          společně tvoří.
-        </Text>
+        <div className={styles.heroInner}>
+          <span className={styles.eyebrow}>Komunita absolventů</span>
+          <Heading level={1} className={styles.heroText}>Future Leader nekončí posledním víkendem</Heading>
+          <Heading level={3} className={`${styles.lead} ${styles.heroText}`}>
+            Absolventi vstupují do komunity lidí, kteří se podporují, propojují a
+            společně tvoří.
+          </Heading>
+        </div>
       </section>
 
       <section className={styles.communityPanel}>
