@@ -37,34 +37,232 @@
   font-weight: var(--font-weight-semibold);
 }
 
-.benefitsGrid {
+.cards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--spacing-md);
   margin-top: var(--spacing-md);
 }
 
+.audienceLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+  gap: var(--spacing-lg);
+  align-items: stretch;
+  margin-top: var(--spacing-md);
+}
+
+.audienceCard {
+  box-shadow: 0 20px 48px rgba(31, 44, 92, 0.08);
+}
+
+.audienceList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-sm) var(--spacing-lg);
+}
+
+.audienceMeta {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: linear-gradient(135deg, rgba(237, 124, 79, 0.12), rgba(220, 184, 65, 0.18));
+  border-radius: var(--radius-md);
+}
+
+.audienceMetaLabel {
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+
+.audienceMetaValue {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-semibold);
+}
+
+.audienceAside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-lg);
+  background-color: rgba(31, 44, 92, 0.06);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(31, 44, 92, 0.08);
+}
+
+.audienceAsideKicker {
+  font-size: 0.8125rem;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-coral);
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-md);
+}
+
 .benefitCard {
-  min-height: 100%;
-  border: 1px solid var(--color-accent-grey);
-  box-shadow: 0 18px 40px rgba(31, 44, 92, 0.05);
-  background-color: var(--color-white);
+  position: relative;
+  min-height: 19.5rem;
+  border: none;
+  border-radius: 0 !important;
+  box-shadow: 0 18px 40px rgba(31, 44, 92, 0.12);
+  overflow: hidden;
+}
+
+.benefitCard h3 {
+  font-size: clamp(1.5rem, 1.2rem + 0.6vw, 2rem);
+  line-height: 1.08;
+}
+
+.benefitCard header {
+  position: relative;
+  z-index: 1;
+  padding: var(--spacing-lg);
+}
+
+.benefitCard > div {
+  position: relative;
+  z-index: 1;
+  padding: 0 var(--spacing-lg) var(--spacing-lg);
+}
+
+.benefitCard::before,
+.benefitCard::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
 }
 
 .benefitCard:nth-child(4n + 1) {
-  background-color: var(--color-accent-pink-light);
+  background-color: #123039;
+  color: var(--color-white);
+  
+}
+
+.benefitCard:nth-child(4n + 1)::before {
+  width: 9.5rem;
+  height: 9.5rem;
+  right: -2rem;
+  top: 1.25rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.benefitCard:nth-child(4n + 1)::after {
+  width: 6rem;
+  height: 6rem;
+  left: -1.5rem;
+  bottom: -1.5rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .benefitCard:nth-child(4n + 2) {
-  background-color: rgba(245, 222, 91, 0.22);
+  /* background: linear-gradient(180deg, #f8eee2 0%, #f4e3d5 100%); */
+  color: var(--color-accent-coral);
+}
+
+.benefitCard:nth-child(4n + 2)::before {
+  width: 100%;
+  height: 42%;
+  left: 0;
+  bottom: 0;
+  /* background: linear-gradient(180deg, rgba(39, 59, 63, 0) 0%, rgba(39, 59, 63, 0.14) 100%); */
 }
 
 .benefitCard:nth-child(4n + 3) {
-  background-color: rgba(190, 196, 197, 0.2);
+  background-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.benefitCard:nth-child(4n + 3)::before {
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9, 23, 28, 0.46) 0%, rgba(9, 23, 28, 0.76) 100%),
+    url("/images/komunita/komunita.jpg");
+  background-size: cover;
+  background-position: center;
+  color: var(--color-white);
 }
 
 .benefitCard:nth-child(4n) {
-  background-color: rgba(207, 90, 69, 0.12);
+  background-color: #dd4f36;
+  color: var(--color-white);
+}
+
+.benefitCard:nth-child(4n)::before {
+  width: 6.5rem;
+  height: 6.5rem;
+  right: 1.5rem;
+  bottom: 0.5rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.benefitCard:nth-child(4n)::after {
+  inset: 0;
+  background: radial-gradient(circle at 85% 30%, transparent 0 4.25rem, rgba(0, 0, 0, 0.04) 4.3rem 100%);
+}
+
+.benefitCard:nth-child(4n + 1) h3,
+.benefitCard:nth-child(4n + 1) p,
+.benefitCard:nth-child(4n + 3) h3,
+.benefitCard:nth-child(4n + 3) p,
+.benefitCard:nth-child(4n) h3,
+.benefitCard:nth-child(4n) p {
+  color: var(--color-white) !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.benefitPhotoCard {
+  position: relative;
+  min-height: 19.5rem;
+  border-radius: 0;
+  overflow: hidden;
+  background-image: linear-gradient(180deg, rgba(9, 23, 28, 0.22) 0%, rgba(9, 23, 28, 0.52) 100%),
+    url("/images/o-programu/IMG_4440.jpg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 18px 40px rgba(31, 44, 92, 0.12);
+}
+
+.benefitApplyBubble {
+  position: absolute;
+  right: var(--spacing-md);
+  bottom: var(--spacing-md);
+  width: 8.75rem;
+  height: 8.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background-color: #f4dd2d;
+  color: var(--color-primary);
+  text-align: center;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-decoration: none;
+  transform: rotate(-24deg);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.benefitApplyBubble:hover {
+  transform: rotate(-24deg) scale(1.04);
+  filter: brightness(0.98);
+}
+
+.benefitApplyBubble:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 2px;
 }
 
 .programIntro {
@@ -164,9 +362,107 @@
   color: var(--color-accent-coral);
 }
 
+.finalCtaSection {
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
+  margin-top: var(--spacing-xl);
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  background-color: var(--color-primary);
+  overflow: hidden;
+}
+
+.finalCtaSection::before,
+.finalCtaSection::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+}
+
+.finalCtaSection::before {
+  width: 22rem;
+  height: 22rem;
+  right: -7rem;
+  top: -8rem;
+  background-color: var(--color-accent-coral);
+}
+
+.finalCtaSection::after {
+  width: 14rem;
+  height: 14rem;
+  left: -6rem;
+  bottom: -5rem;
+  background-color: var(--color-accent-yellow);
+}
+
+.finalCtaInner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--spacing-lg);
+  align-items: start;
+}
+
+.finalCtaSymbol {
+  width: 6rem;
+  color: var(--color-beige);
+}
+
+.finalCtaContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.finalCtaKicker {
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-yellow);
+}
+
+.finalCtaHeading {
+  max-width: 16ch;
+  color: var(--color-white) !important;
+}
+
+.finalCtaText {
+  max-width: 42rem;
+  color: var(--color-beige) !important;
+}
+
+.finalCtaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.finalCtaLink {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-beige);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 @media (max-width: 1024px) {
   .benefitsGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cards,
+  .audienceLayout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .audienceLayout {
+    grid-template-columns: 1fr;
   }
 
   .programGrid {
@@ -176,6 +472,10 @@
   .philosophyLayout {
     grid-template-columns: 1fr;
   }
+
+  .finalCtaInner {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -183,7 +483,20 @@
     grid-template-columns: 1fr;
   }
 
+  .cards,
+  .audienceList {
+    grid-template-columns: 1fr;
+  }
+
   .programMetaRow {
     grid-template-columns: 1fr;
+  }
+
+  .finalCtaSection {
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+
+  .finalCtaSymbol {
+    width: 4.5rem;
   }
 }
