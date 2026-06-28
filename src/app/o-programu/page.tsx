@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Heading } from "@/components/atoms/Heading/Heading";
 import { Text } from "@/components/atoms/Text/Text";
+import { Button } from "@/components/atoms/Button/Button";
 import { Divider } from "@/components/atoms/Divider/Divider";
 import { Card } from "@/components/atoms/Card/Card";
 import { LogoSymbol } from "@/components/atoms/Logo/LogoSymbol";
@@ -97,6 +98,13 @@ export default function OProgramuPage() {
               text={<Text>{benefit.description}</Text>}
             />
           ))}
+          <article className={styles.benefitPhotoCard}>
+            <a href="/nezavazna-prihlaska" className={styles.benefitApplyBubble}>
+              PŘIJÍMÁME
+              <br />
+              PŘIHLÁŠKY
+            </a>
+          </article>
         </div>
       </section>
 
@@ -217,7 +225,22 @@ Zároveň ale přicházejí otázky:</Text>
         </div>
       </section>
 
-      <Divider />
+      <section className={styles.finalCtaSection}>
+        <div className={styles.finalCtaInner}>
+          <div className={styles.finalCtaSymbol}>
+            <LogoSymbol hovered={false} color="var(--color-beige)" />
+          </div>
+          <div className={styles.finalCtaContent}>
+            <span className={styles.finalCtaKicker}>Poznej sebe a projev své jedinečné kvality</span>
+            <Heading level={2} className={styles.finalCtaHeading}>Jestli cítíte, že je čas vykročit, přidejte se k dalšímu běhu Future Leader.</Heading>
+            <Text className={styles.finalCtaText}>Čtyři víkendová setkání, malá skupina a prostor, kde můžete růst bez masek, v kontaktu sami se sebou i s druhými.</Text>
+            <div className={styles.finalCtaActions}>
+              <Button href="/nezavazna-prihlaska">Nezávazná přihláška</Button>
+              <a href="/ohlasy" className={styles.finalCtaLink}>Přečíst si ohlasy</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className={styles.section}>
         <Heading level={2} className={styles.headingWithLogo}>

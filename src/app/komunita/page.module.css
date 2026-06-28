@@ -14,7 +14,7 @@
       rgba(39, 59, 63, 0.55) 100%
     ),
     url("/images/komunita/komunita.jpg");
-  background-position: top;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
