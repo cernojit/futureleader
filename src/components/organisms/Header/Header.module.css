@@ -4,15 +4,24 @@
   z-index: 100;
   background-color: var(--color-white);
   border-bottom: none;
-  height: var(--header-height);
+  min-height: var(--header-height);
   display: flex;
   align-items: center;
 }
 
 .inner {
   width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
   padding: 0 var(--spacing-lg);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+  .inner {
+    padding: 0 var(--spacing-md);
+  }
 }
