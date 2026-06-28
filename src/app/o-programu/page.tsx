@@ -72,13 +72,16 @@ export const metadata: Metadata = {
 export default function OProgramuPage() {
   return (
     <>
-      <Heading level={1}>O programu</Heading>
-      <Text size="lg" weight="extralight">
-        Future Leader je transformační program, který propojuje sebepoznání,
-        leadership a praktický život.
-      </Text>
-
-      <Divider />
+      <section className={styles.hero}>
+        <div className={styles.heroInner}>
+          <span className={styles.eyebrow}>O programu</span>
+          <Heading level={1} className={styles.heroText}>Future Leader je transformační program nové generace</Heading>
+          <Text size="lg" weight="extralight" className={`${styles.lead} ${styles.heroText}`}>
+            Propojuje sebepoznání, leadership a praktický život v bezpečném prostoru,
+            kde můžete růst bez masek a v souladu se sebou.
+          </Text>
+        </div>
+      </section>
 
       <section className={styles.section}>
         <Heading level={2} className={styles.headingWithLogo}>
