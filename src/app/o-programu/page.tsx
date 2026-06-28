@@ -105,6 +105,123 @@ export default function OProgramuPage() {
       <section className={styles.section}>
         <Heading level={2} className={styles.headingWithLogo}>
           <LogoSymbol hovered={false} color="currentColor" />
+          <span>PROČ FUTURE LEADER</span>
+        </Heading>
+        <Text>Future Leader je transformační rozvojový program pro mladé lídry, podnikatele, manažery, tvůrce a všechny, kteří chtějí žít i tvořit autenticky, vědomě a v souladu se svými hodnotami.</Text>
+        <div className={styles.cards}>
+          <Card
+            header={<Heading level={3}>Možná cítíte, že…</Heading>}
+            text={
+              <div>
+              <ul className={styles.bulletList}>
+                <li>už nechcete fungovat jen výkonově,</li>
+                <li>potřebujete větší směr a ukotvení,</li>
+                <li>chcete vést lidi zdravěji,</li>
+                <li>hledáte hlubší smysl,</li>
+                <li>chcete být víc sami sebou,</li>
+                <li>toužíte po komunitě podobně naladěných lidí.</li>
+              </ul>
+              <Text>A možná už víte, že další know-how nestačí.</Text>
+              </div>
+            }
+          />
+          <Card
+            header={<Heading level={3}>Prostor pro růst, který má skutečný dopad.</Heading>}
+            text={
+              <>
+              <Text>Je to prostor, kde:</Text>
+              <ul className={styles.bulletList}>
+                <li>se zastavíte,</li>
+                <li>uslyšíte sami sebe,</li>
+                <li>objevíte svůj potenciál,</li>
+                <li>pochopíte své vzorce,</li>
+                <li>naučíte se vést přirozeněji,</li>
+                <li>a začnete tvořit více v souladu se sebou.</li>
+              </ul>
+              </>
+            }
+          />
+          <Card
+            header={<Heading level={3}>Program propojuje:</Heading>}
+            text={
+              <ul className={styles.bulletList}>
+                <li>leadership,</li>
+                <li>sebepoznání,</li>
+                <li>systemické principy,</li>
+                <li>komunikaci,</li>
+                <li>práci s emocemi,</li>
+                <li>intuici,</li>
+                <li>komunitu,</li>
+                <li>a skutečný život.</li>
+              </ul>
+            }
+          />
+          <Card
+            header={<Heading level={3}>Jste na dobré cestě. A možná cítíte, že můžete jít ještě dál.</Heading>}
+            text={
+              <>
+                <Text>Daří se vám. Máte zkušenosti. Posouváte věci kolem sebe.
+Zároveň ale přicházejí otázky:</Text>
+              <ul className={styles.bulletList}>
+                <li>Jak vést s větší lehkostí a jistotou?</li>
+                <li>Jak skloubit práci, vztahy a vlastní energii?</li>
+                <li>Jak tvořit něco, co má skutečný smysl? </li>
+                <li>Jak neztratit sebe sama v každodenním tempu? </li>
+                <li>Jak naplno využít svůj potenciál? </li>
+              </ul>
+              <Text>Právě pro tyto chvíle vznikl Future Leader.</Text>
+              </>
+            }
+          />
+        </div>
+      </section>
+
+      <Divider />
+
+      <section className={styles.section}>
+        <Heading level={2} className={styles.headingWithLogo}>
+          <LogoSymbol hovered={false} color="currentColor" />
+          <span>Pro koho je program určen</span>
+        </Heading>
+        <Heading level={4}>Pro mladé lídry, tvůrce, podnikatele, manažery i lidi, kteří cítí, že chtějí žít a tvořit vědoměji.</Heading>
+        <div className={styles.audienceLayout}>
+          <Card
+            className={styles.audienceCard}
+            header={<Heading level={3}>Program je pro vás, pokud:</Heading>}
+            text={
+              <ul className={`${styles.bulletList} ${styles.audienceList}`}>
+                <li>vedete lidi nebo chcete začít vést</li>
+                <li>cítíte, že už nechcete fungovat jen výkonově</li>
+                <li>hledáte větší smysl a směr</li>
+                <li>chcete lépe rozumět sobě i vztahům</li>
+                <li>stojíte na životní křižovatce</li>
+                <li>chcete aktivně měnit prostor kolem sebe</li>
+                <li>toužíte tvořit autenticky</li>
+                <li>chcete být součástí inspirativní komunity</li>
+              </ul>
+            }
+            footer={
+              <div className={styles.audienceMeta}>
+                <span className={styles.audienceMetaLabel}>Věk účastníků</span>
+                <span className={styles.audienceMetaValue}>24–39 let</span>
+              </div>
+            }
+          />
+          <aside className={styles.audienceAside}>
+            <span className={styles.audienceAsideKicker}>Komu sedí nejvíc</span>
+            <Text>
+              Těm, kdo už nechtějí jen sbírat další nástroje, ale hledají hlubší
+              oporu, větší vnitřní jasnost a zdravější způsob, jak vést sebe i druhé.
+            </Text>
+          </aside>
+        </div>
+      </section>
+
+      <Divider />
+
+      <section className={styles.section}>
+        <Heading level={2} className={styles.headingWithLogo}>
+          <LogoSymbol hovered={false} color="currentColor" />
           <span>Jak program probíhá</span>
         </Heading>
         <div className={styles.programIntro}>

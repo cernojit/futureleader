@@ -602,6 +602,27 @@
   color: var(--color-accent-coral);
 }
 
+.programTeaserLayout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-lg);
+  align-items: end;
+  margin-top: var(--spacing-md);
+}
+
+.programTeaserLink {
+  display: inline-block;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-accent-coral);
+  text-decoration: none;
+  font-size: 1.125rem;
+  transition: color 0.2s;
+}
+
+.programTeaserLink:hover {
+  color: var(--color-primary);
+}
+
 .finalCtaSection {
   position: relative;
   width: 100vw;
@@ -775,6 +796,11 @@
 
   .programPricingSection {
     padding: var(--spacing-lg);
+  }
+
+  .programTeaserLayout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
   }
 
   .programLocationsGrid {
