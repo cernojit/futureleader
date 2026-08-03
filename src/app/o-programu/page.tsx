@@ -28,13 +28,13 @@ const BENEFITS = [
       "Ujasníte si další pracovní i osobní kroky. Ujasníte si, co opravdu chcete tvořit, v práci i v životě.",
   },
   {
+    title: "Hlubší vztahy",
+    description: "K sobě, k lidem kolem i ke své práci.",
+  },
+  {
     title: "Komunitu",
     description:
       "Potkáte lidi, kteří chtějí tvořit podobně jako vy. Lidi, se kterými nemusíte nic hrát. Propojení na hlubší úrovni.",
-  },
-  {
-    title: "Hlubší vztahy",
-    description: "K sobě, k lidem kolem i ke své práci.",
   },
   {
     title: "Praktické zkušenosti",
@@ -92,15 +92,24 @@ export default function OProgramuPage() {
           vedete a tvoříte.
         </Heading>
         <div className={styles.benefitsGrid}>
-          {BENEFITS.map((benefit) => (
-            <Card
-              key={benefit.title}
-              className={styles.benefitCard}
-              header={<Heading level={3}>{benefit.title}</Heading>}
-              text={<Text>{benefit.description}</Text>}
-              footer={benefit.title === "Větší jasno v sobě" ? <span className={styles.benefitExperienceBadge}>10 let zkušeností</span> : undefined}
-            />
-          ))}
+          {BENEFITS.map((benefit) => {
+            const isBenchCard = benefit.title === "Vnitřní stabilitu a jistotu";
+            const isRelationshipCard = benefit.title === "Hlubší vztahy";
+
+            return (
+              <Card
+                key={benefit.title}
+                className={`${styles.benefitCard} ${isBenchCard ? styles.benefitBenchCard : ""} ${isRelationshipCard ? styles.benefitRelationshipCard : ""}`.trim()}
+                header={<Heading level={3}>{benefit.title}</Heading>}
+                text={<Text>{benefit.description}</Text>}
+                footer={
+                  benefit.title === "Větší jasno v sobě" ? (
+                    <span className={styles.benefitExperienceBadge}>10 let zkušeností</span>
+                  ) : undefined
+                }
+              />
+            );
+          })}
           <article className={styles.benefitPhotoCard}>
             <a href="/nezavazna-prihlaska" className={styles.benefitApplyBubble}>
               PŘIJÍMÁME
