@@ -233,46 +233,44 @@ export default function DiloZDiluPage() {
         <span className={styles.statementLine}>Dílo z dílů je o nás.</span>
       </section>
 
-      <Divider />
-
       {/* O autorce */}
-      <section className={styles.section}>
-        <Heading level={2}>O autorce</Heading>
-        <div className={styles.authorProfile}>
-          <div className={styles.authorImageWrapper}>
-            <Image
-              src="/images/dilo-z-dilu/IMG_5253.webp"
-              alt="Anna Štěpánková"
-              width={400}
-              height={400}
-              className={styles.authorImage}
-            />
-          </div>
-          <div className={styles.authorContent}>
-            <Text>
-              Anna Štěpánková pracuje na pomezí snového umění a funkčního
-              produktového designu. Zmíněná v Forbes. Vytvářela výlohy pro Hermès,
-              instalace pro Czech Grand Design a pražské dekorace ESKU.
-            </Text>
-            <Text>
-              Pragmaticky ukotvená a zároveň volně plynoucí. Vzdušná i zemitá.
-              Hloubavě přemýšlivá. Ryzí a zásadová. Zarputilá a energická — a
-              přitom tak jemná a křehká.
-            </Text>
-            <div className={styles.authorTraits}>
-              <span className={styles.trait}>Neklidný oceán i jemná vlna</span>
-              <span className={styles.trait}>Okouzlující a půvabná</span>
-              <span className={styles.trait}>Nenápadně výrazná</span>
-              <span className={styles.trait}>Měkce strohá</span>
-              <span className={styles.trait}>Elegantně přesná</span>
-              <span className={styles.trait}>Dokonale nedokonalá</span>
-              <span className={styles.trait}>Autenticky svá</span>
+      <section className={`${styles.section} ${styles.authorSection}`}>
+        <div className={styles.authorSectionInner}>
+          <Heading level={2}>O autorce</Heading>
+          <div className={styles.authorProfile}>
+            <div className={styles.authorImageWrapper}>
+              <Image
+                src="/images/dilo-z-dilu/IMG_5253.webp"
+                alt="Anna Štěpánková"
+                width={400}
+                height={400}
+                className={styles.authorImage}
+              />
+            </div>
+            <div className={styles.authorContent}>
+              <Text>
+                Anna Štěpánková pracuje na pomezí snového umění a funkčního
+                produktového designu. Zmíněná v Forbes. Vytvářela výlohy pro Hermès,
+                instalace pro Czech Grand Design a pražské dekorace ESKU.
+              </Text>
+              <Text>
+                Pragmaticky ukotvená a zároveň volně plynoucí. Vzdušná i zemitá.
+                Hloubavě přemýšlivá. Ryzí a zásadová. Zarputilá a energická — a
+                přitom tak jemná a křehká.
+              </Text>
+              <div className={styles.authorTraits}>
+                <span className={styles.trait}>Neklidný oceán i jemná vlna</span>
+                <span className={styles.trait}>Okouzlující a půvabná</span>
+                <span className={styles.trait}>Nenápadně výrazná</span>
+                <span className={styles.trait}>Měkce strohá</span>
+                <span className={styles.trait}>Elegantně přesná</span>
+                <span className={styles.trait}>Dokonale nedokonalá</span>
+                <span className={styles.trait}>Autenticky svá</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
-      <Divider />
 
       {/* Mise */}
       <section className={styles.section}>
@@ -306,20 +304,6 @@ export default function DiloZDiluPage() {
             Součástí díla je tištěný průvodce Harmonie polarit — autorský
             průvodce s příběhy Future Leaderů.
           </Text>
-        </div>
-      </section>
-
-      <Divider />
-
-      {/* Kontakt */}
-      <section className={styles.section}>
-        <Heading level={2}>Kontakt</Heading>
-        <div className={styles.card}>
-          <ContactInfo
-            name="Ivana Sládková"
-            email="info@futureleader.cz"
-            phone="+420 724 030 480"
-          />
         </div>
       </section>
     </article>

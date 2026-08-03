@@ -20,6 +20,16 @@
       rgba(39, 59, 63, 0.65) 100%
     ),
     url("/images/o-programu/cora-leach-p0jz4pmnl9E-unsplash.jpg");
+  background-image: linear-gradient(
+      180deg,
+      rgba(39, 59, 63, 0.18) 0%,
+      rgba(39, 59, 63, 0.45) 55%,
+      rgba(39, 59, 63, 0.65) 100%
+    ),
+    image-set(
+      url("/images/o-programu/cora-leach-p0jz4pmnl9E-unsplash-desktop.avif") type("image/avif") 1x,
+      url("/images/o-programu/cora-leach-p0jz4pmnl9E-unsplash-desktop.webp") type("image/webp") 1x
+    );
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -261,6 +271,11 @@
   inset: 0;
   background: linear-gradient(180deg, rgba(9, 23, 28, 0.46) 0%, rgba(9, 23, 28, 0.76) 100%),
     url("/images/komunita/komunita.jpg");
+  background: linear-gradient(180deg, rgba(9, 23, 28, 0.46) 0%, rgba(9, 23, 28, 0.76) 100%),
+    image-set(
+      url("/images/komunita/komunita-desktop.avif") type("image/avif") 1x,
+      url("/images/komunita/komunita-desktop.webp") type("image/webp") 1x
+    );
   background-size: cover;
   background-position: center;
   color: var(--color-white);
@@ -275,6 +290,11 @@
   inset: 0;
   background: linear-gradient(180deg, rgba(9, 23, 28, 0.42) 0%, rgba(9, 23, 28, 0.72) 100%),
     url("/images/o-programu/bench.jpg");
+  background: linear-gradient(180deg, rgba(9, 23, 28, 0.42) 0%, rgba(9, 23, 28, 0.72) 100%),
+    image-set(
+      url("/images/o-programu/bench-desktop.avif") type("image/avif") 1x,
+      url("/images/o-programu/bench-desktop.webp") type("image/webp") 1x
+    );
   background-size: cover;
   background-position: center;
 }
@@ -361,6 +381,11 @@
   overflow: hidden;
   background-image: linear-gradient(180deg, rgba(9, 23, 28, 0.22) 0%, rgba(9, 23, 28, 0.52) 100%),
     url("/images/o-programu/people.jpg");
+  background-image: linear-gradient(180deg, rgba(9, 23, 28, 0.22) 0%, rgba(9, 23, 28, 0.52) 100%),
+    image-set(
+      url("/images/o-programu/people-desktop.avif") type("image/avif") 1x,
+      url("/images/o-programu/people-desktop.webp") type("image/webp") 1x
+    );
   background-size: cover;
   background-position: center;
   box-shadow: 0 18px 40px rgba(31, 44, 92, 0.12);
@@ -614,6 +639,53 @@
   .hero {
     height: 480px;
     background-position: center;
+    background-image: linear-gradient(
+        180deg,
+        rgba(39, 59, 63, 0.18) 0%,
+        rgba(39, 59, 63, 0.45) 55%,
+        rgba(39, 59, 63, 0.65) 100%
+      ),
+      url("/images/o-programu/cora-leach-p0jz4pmnl9E-unsplash.jpg");
+    background-image: linear-gradient(
+        180deg,
+        rgba(39, 59, 63, 0.18) 0%,
+        rgba(39, 59, 63, 0.45) 55%,
+        rgba(39, 59, 63, 0.65) 100%
+      ),
+      image-set(
+        url("/images/o-programu/cora-leach-p0jz4pmnl9E-unsplash-mobile.avif") type("image/avif") 1x,
+        url("/images/o-programu/cora-leach-p0jz4pmnl9E-unsplash-mobile.webp") type("image/webp") 1x
+      );
+  }
+
+  .benefitCard:nth-child(4n + 3)::before {
+    background: linear-gradient(180deg, rgba(9, 23, 28, 0.46) 0%, rgba(9, 23, 28, 0.76) 100%),
+      url("/images/komunita/komunita.jpg");
+    background: linear-gradient(180deg, rgba(9, 23, 28, 0.46) 0%, rgba(9, 23, 28, 0.76) 100%),
+      image-set(
+        url("/images/komunita/komunita-mobile.avif") type("image/avif") 1x,
+        url("/images/komunita/komunita-mobile.webp") type("image/webp") 1x
+      );
+  }
+
+  .benefitCard.benefitBenchCard::before {
+    background: linear-gradient(180deg, rgba(9, 23, 28, 0.42) 0%, rgba(9, 23, 28, 0.72) 100%),
+      url("/images/o-programu/bench.jpg");
+    background: linear-gradient(180deg, rgba(9, 23, 28, 0.42) 0%, rgba(9, 23, 28, 0.72) 100%),
+      image-set(
+        url("/images/o-programu/bench-mobile.avif") type("image/avif") 1x,
+        url("/images/o-programu/bench-mobile.webp") type("image/webp") 1x
+      );
+  }
+
+  .benefitPhotoCard {
+    background-image: linear-gradient(180deg, rgba(9, 23, 28, 0.22) 0%, rgba(9, 23, 28, 0.52) 100%),
+      url("/images/o-programu/people.jpg");
+    background-image: linear-gradient(180deg, rgba(9, 23, 28, 0.22) 0%, rgba(9, 23, 28, 0.52) 100%),
+      image-set(
+        url("/images/o-programu/people-mobile.avif") type("image/avif") 1x,
+        url("/images/o-programu/people-mobile.webp") type("image/webp") 1x
+      );
   }
 
   .benefitsGrid {

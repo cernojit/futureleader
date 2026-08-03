@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Heading } from "@/components/atoms/Heading/Heading";
 import styles from "./page.module.css";
 import { Button } from "@/components/atoms/Button/Button";
@@ -48,6 +49,12 @@ const PHILOSOPHY_VALUES = [
   "dokážou spolupracovat",
   "a tvoří ze svého středu",
 ] as const;
+
+export const metadata: Metadata = {
+  title: "Future Leader — Program osobního rozvoje",
+  description:
+    "Seberozvojový program pro každého, kdo má odvahu vést. Devět měsíců, čtyři prodloužené víkendy, celoživotní komunita.",
+};
 
 
 export default function HomePage() {
