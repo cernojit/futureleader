@@ -204,6 +204,14 @@ export default function NasTymPage() {
           })}
         </div>
       </section>
+
+      <section className={styles.thanksSection}>
+        <div className={styles.thanksInner}>
+          <Text className={styles.thanksText}>
+            Velmi děkujeme všem, kteří program Future Leader uvedli do života – Ivana Sládková, Zdeněk Štěpánek, Lea Paulínová, Mirek Spousta, Tamara Kováčová, Silvie Pýchová a Ondřej Klouček. Děkujeme také všem lektorům programu - Zdeňkovi Štěpánkovi, Jirkovi Šmejkalovi, Helence Futerové, Monice Kubasové, Martinu Holčíkovi, Světle Holasové a Aleně Jáchimové. Velmi děkujeme Ivance Sládkové za více než desetiletou starostlivou a láskyplnou péči o celý program Future Leader a jeho síť absolventů.
+          </Text>
+        </div>
+      </section>
     </>
   );
 }
