@@ -55,6 +55,7 @@ export default function DiloZDiluPage() {
           width={919}
           height={479}
           className={styles.ellipses}
+          loading="eager"
           aria-hidden="true"
         />
         <Heading level={1} className={styles.titleOverlay}>

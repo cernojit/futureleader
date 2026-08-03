@@ -14,7 +14,7 @@
   color: var(--color-accent-grey)
 }
 
-.titleOverlay {
+h1.titleOverlay {
   position: absolute;
   text-align: center;
   font-size: clamp(2.5rem, 2.2rem + 1vw, 3rem);
@@ -32,8 +32,8 @@
 }
 
 @media (max-width: 768px) {
-  .titleOverlay {
-    font-size: 1.8rem;
+  h1.titleOverlay {
+    font-size: 1.6rem;
   }
 }
 
@@ -118,7 +118,7 @@
 .statement {
   text-align: center;
   padding: var(--spacing-2xl) var(--spacing-xl);
-  margin: var(--spacing-xl) 0;
+  margin: var(--spacing-l) 0 0 0;
 }
 
 .statementLine {
