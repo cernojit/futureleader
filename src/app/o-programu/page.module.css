@@ -79,6 +79,17 @@
   flex-shrink: 0;
 }
 
+@media (max-width: 768px) {
+  .headingWithLogo {
+    gap: var(--spacing-xs);
+  }
+
+  .headingWithLogo svg {
+    width: 50px;
+    height: auto;
+  }
+}
+
 .bulletList {
   display: grid;
   gap: var(--spacing-sm);
@@ -707,5 +718,9 @@
 
   .finalCtaSymbol {
     width: 4.5rem;
+  }
+
+  .finalCtaActions {
+    justify-content: flex-end;
   }
 }

@@ -9,16 +9,16 @@
   padding: 0 var(--spacing-lg) var(--spacing-lg);
   background-image: linear-gradient(
       180deg,
-      rgba(39, 59, 63, 0.05) 0%,
-      rgba(39, 59, 63, 0.35) 55%,
-      rgba(39, 59, 63, 0.55) 100%
+      rgba(39, 59, 63, 0.2) 0%,
+      rgba(39, 59, 63, 0.5) 55%,
+      rgba(39, 59, 63, 0.72) 100%
     ),
     url("/images/komunita/komunita.jpg");
   background-image: linear-gradient(
       180deg,
-      rgba(39, 59, 63, 0.05) 0%,
-      rgba(39, 59, 63, 0.35) 55%,
-      rgba(39, 59, 63, 0.55) 100%
+      rgba(39, 59, 63, 0.2) 0%,
+      rgba(39, 59, 63, 0.5) 55%,
+      rgba(39, 59, 63, 0.72) 100%
     ),
     image-set(
       url("/images/komunita/komunita-desktop.avif") type("image/avif") 1x,
@@ -93,16 +93,16 @@
     background-position: center;
     background-image: linear-gradient(
         180deg,
-        rgba(39, 59, 63, 0.05) 0%,
-        rgba(39, 59, 63, 0.35) 55%,
-        rgba(39, 59, 63, 0.55) 100%
+        rgba(39, 59, 63, 0.2) 0%,
+        rgba(39, 59, 63, 0.5) 55%,
+        rgba(39, 59, 63, 0.72) 100%
       ),
       url("/images/komunita/komunita.jpg");
     background-image: linear-gradient(
         180deg,
-        rgba(39, 59, 63, 0.05) 0%,
-        rgba(39, 59, 63, 0.35) 55%,
-        rgba(39, 59, 63, 0.55) 100%
+        rgba(39, 59, 63, 0.2) 0%,
+        rgba(39, 59, 63, 0.5) 55%,
+        rgba(39, 59, 63, 0.72) 100%
       ),
       image-set(
         url("/images/komunita/komunita-mobile.avif") type("image/avif") 1x,
