@@ -5,6 +5,11 @@
   font-style: normal;
 }
 
+.label {
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-extralight);
+}
+
 .name {
   font-weight: var(--font-weight-semibold);
 }

@@ -9,7 +9,7 @@ import { Button } from "@/components/atoms/Button/Button";
 const NAV_ITEMS = [
   { href: "/", label: "Úvod" },
   { href: "/o-programu", label: "O programu" },
-  { href: "/komunita", label: "Komunita" },
+  { href: "/sit-absolventu", label: "Síť absolventů" },
   { href: "/nas-tym", label: "Náš tým" },
   { href: "/dilo-z-dilu", label: "Dílo z dílů" },
   { href: "/ohlasy", label: "Reference" },
@@ -44,7 +44,7 @@ export function Navigation() {
           </li>
         ))}
         <li key="/nezavazna-prihlaska">
-          <Button variant="secondary" href="/nezavazna-prihlaska" active={pathname === "/nezavazna-prihlaska"} onClick={() => setIsOpen(false)}>Toto mě volá</Button>
+          <Button variant="secondary" href="/nezavazna-prihlaska" active={pathname === "/nezavazna-prihlaska"} onClick={() => setIsOpen(false)}>Mám zájem</Button>
         </li>
       </ul>
     </nav>

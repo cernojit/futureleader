@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Heading } from "@/components/atoms/Heading/Heading";
 import styles from "./page.module.css";
 import { Button } from "@/components/atoms/Button/Button";
@@ -25,7 +26,7 @@ const PROGRAM_SUPPORT = [
   "Individuální zaměření",
   "sdílení v menších skupinách",
   "praktické experimenty do života",
-  "komunita absolventů",
+  "Komunita absolventů",
 ] as const;
 
 const PROGRAM_DATES_CURRENT_RUN = [
@@ -48,6 +49,12 @@ const PHILOSOPHY_VALUES = [
   "dokážou spolupracovat",
   "a tvoří ze svého středu",
 ] as const;
+
+export const metadata: Metadata = {
+  title: "Future Leader — Program osobního rozvoje",
+  description:
+    "Seberozvojový program pro každého, kdo má odvahu vést. Devět měsíců, čtyři prodloužené víkendy, celoživotní komunita.",
+};
 
 
 export default function HomePage() {
@@ -103,7 +110,7 @@ export default function HomePage() {
               emocích i nedokonalostech.
             </Text>
             <Text>
-              Protože právě odtud vzniká autentické vedení, zdravé vztahy a
+              Protože právě odtud vzniká <span className={styles.underlinedWord}>přirozené</span> vedení, zdravé vztahy a
               smysluplné tvoření.
             </Text>
           </aside>
@@ -113,20 +120,22 @@ export default function HomePage() {
 
       <Divider />
 
-       <section className={styles.section}>
-        <Heading level={2}>Transformační program pro ty, kteří chtějí vést autenticky — sebe, vztahy, práci i život.</Heading>
-        {/* <Heading level={3}>10 let zkušeností • 4 víkendová setkání • komunita absolventů</Heading> */}
+      <section className={styles.section}>
+        <Heading level={2}>Transformační program pro ty, kteří chtějí vést <span className={styles.lightWord}>přirozeně</span> — sami sebe, vztahy, práci i život.</Heading>
         <div className={styles.polarities}>
           <a href="/nas-tym" className={`${styles.polarity} ${styles.polarityLink}`}>10 let zkušeností</a>
           <a href="#terminy-programu" className={`${styles.polarity} ${styles.polarityLink}`}>4 prodloužené víkendy</a>
-          <a href="/komunita" className={`${styles.polarity} ${styles.polarityLink}`}>komunita absolventů</a>
+          <a href="/sit-absolventu" className={`${styles.polarity} ${styles.polarityLink}`}>síť absolventů</a>
         </div>
       </section>
 
       <Divider />
 
       <section className={styles.section}>
-        <Heading level={2}>Jak to funguje</Heading>
+        <Heading level={2} className={styles.headingWithLogo}>
+          <LogoSymbol hovered={false} color="currentColor" />
+          <span>Jak program probíhá</span>
+        </Heading>
         <div className={styles.programTeaserLayout}>
           <div>
             <Text><strong>4 prodloužené víkendy</strong> během roku v malé skupině 12–20 lidí.</Text>
@@ -142,9 +151,10 @@ export default function HomePage() {
       <section id="terminy-programu" className={styles.programDatesSection}>
         <div className={styles.programDatesInner}>
           <Heading level={3} className={styles.programDatesHeading}>Termíny programu</Heading>
+          <Text className={styles.finalCtaText}>Začínáme vždy ve čtvrtek nebo v pátek v 17 hodin a končíme v neděli v 16 hodin.</Text>
           <div className={styles.programDatesGrid}>
             <div className={styles.programDatesCard}>
-              <span className={styles.programDatesLabel}>Termíny: Future Leader 11. běh</span>
+              <span className={styles.programDatesLabel}>Future Leader 11. běh</span>
               <ul className={styles.programDatesList}>
                 {PROGRAM_DATES_CURRENT_RUN.map((date) => (
                   <li key={date}>{date}</li>
@@ -152,7 +162,7 @@ export default function HomePage() {
               </ul>
             </div>
             <div className={styles.programDatesCard}>
-              <span className={styles.programDatesLabel}>Termíny: Future Leader 12. běh</span>
+              <span className={styles.programDatesLabel}>Future Leader 12. běh</span>
               <ul className={styles.programDatesList}>
                 {PROGRAM_DATES_12TH_RUN.map((date) => (
                   <li key={date}>{date}</li>
@@ -160,6 +170,9 @@ export default function HomePage() {
               </ul>
             </div>
           </div>
+        <div className={styles.cta}>
+          <Button href="/nezavazna-prihlaska">Mám zájem</Button>
+        </div>
         </div>
       </section>
 
@@ -224,11 +237,10 @@ export default function HomePage() {
                 </div>
             </article>
             <aside className={styles.pricingNote}>
-              <span className={styles.pricingNoteKicker}>Věříme na přístupnost</span>
-              <Heading level={3}>Cena není překážkou.</Heading>
+              <span className={styles.pricingNoteKicker}>Láká Vás přihlásit se, ale pořád si nejste jistí? </span>
+              <Heading level={3}>Přihlašte se na 1.víkend.</Heading>
               <Text>
-                Pokud vám v účasti brání finanční situace, ozvěte se nám. 
-                Hledáme řešení pro ty, kteří opravdu chtějí být součástí komunity.
+                Láká Vás přihlásit se, ale pořád si nejste jistí? Přijeďte na první víkend a sami se potom rozhodnete, zda budete pokračovat. Těšíme se na Vás.
               </Text>
             </aside>
           </div>
@@ -275,7 +287,7 @@ export default function HomePage() {
           <div className={styles.finalCtaContent}>
             <span className={styles.finalCtaKicker}>Poznej sebe a projev své jedinečné kvality</span>
             <Heading level={2} className={styles.finalCtaHeading}>Jestli cítíte, že je čas vykročit, přidejte se k dalšímu běhu Future Leader.</Heading>
-            <Text className={styles.finalCtaText}>Čtyři víkendová setkání, malá skupina a prostor, kde můžete růst bez masek, v kontaktu sami se sebou i s druhými.</Text>
+            <Text className={styles.finalCtaText}>Čtyři prodloužené víkendy, malá skupina a prostor, kde můžete růst bez masek, v kontaktu sami se sebou i s druhými.</Text>
             <div className={styles.finalCtaActions}>
               <Button href="/nezavazna-prihlaska">Nezávazná přihláška</Button>
               <a href="/ohlasy" className={styles.finalCtaLink}>Přečíst si ohlasy</a>

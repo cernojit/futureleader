@@ -1,8 +1,18 @@
 .logo {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  min-height: 3.25rem;
+  padding-left: 3.5rem;
   color: var(--color-primary);
+}
+
+.symbolWrap {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: inline-flex;
+  line-height: 0;
 }
 
 .symbol {
@@ -13,12 +23,7 @@
 .text {
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
-  font-size: 1.125rem;
   font-weight: var(--font-weight-regular);
-  letter-spacing: 0.02em;
+  font-size: 1.5rem;
 }
 
-.line {
-  display: block;
-}

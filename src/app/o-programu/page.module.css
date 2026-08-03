@@ -13,16 +13,36 @@
   margin-top: calc(-1 * var(--spacing-xl));
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  padding: 0 var(--spacing-lg) var(--spacing-lg);
-  background: linear-gradient(180deg, #22363b 0%, #192b30 60%, #123039 100%);
-  display: flex;
-  align-items: flex-end;
+  background-image: linear-gradient(
+      180deg,
+      rgba(39, 59, 63, 0.18) 0%,
+      rgba(39, 59, 63, 0.45) 55%,
+      rgba(39, 59, 63, 0.65) 100%
+    ),
+    url("/images/o-programu/cora-leach-p0jz4pmnl9E-unsplash.jpg");
+  background-image: linear-gradient(
+      180deg,
+      rgba(39, 59, 63, 0.18) 0%,
+      rgba(39, 59, 63, 0.45) 55%,
+      rgba(39, 59, 63, 0.65) 100%
+    ),
+    image-set(
+      url("/images/o-programu/cora-leach-p0jz4pmnl9E-unsplash-desktop.avif") type("image/avif") 1x,
+      url("/images/o-programu/cora-leach-p0jz4pmnl9E-unsplash-desktop.webp") type("image/webp") 1x
+    );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .heroInner {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: var(--max-width);
-  margin: auto;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg) 10% var(--spacing-lg);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -179,6 +199,25 @@
   padding: 0 var(--spacing-lg) var(--spacing-lg);
 }
 
+.benefitExperienceBadge {
+  position: absolute;
+  right: 30%;
+  bottom: 2rem;
+  width: 7rem;
+  height: 7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background-color: #f4dd2d;
+  color: var(--color-primary);
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  padding: 0.5rem;
+}
+
 .benefitCard::before,
 .benefitCard::after {
   content: "";
@@ -232,9 +271,62 @@
   inset: 0;
   background: linear-gradient(180deg, rgba(9, 23, 28, 0.46) 0%, rgba(9, 23, 28, 0.76) 100%),
     url("/images/komunita/komunita.jpg");
+  background: linear-gradient(180deg, rgba(9, 23, 28, 0.46) 0%, rgba(9, 23, 28, 0.76) 100%),
+    image-set(
+      url("/images/komunita/komunita-desktop.avif") type("image/avif") 1x,
+      url("/images/komunita/komunita-desktop.webp") type("image/webp") 1x
+    );
   background-size: cover;
   background-position: center;
   color: var(--color-white);
+}
+
+.benefitBenchCard {
+  background-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.benefitCard.benefitBenchCard::before {
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9, 23, 28, 0.42) 0%, rgba(9, 23, 28, 0.72) 100%),
+    url("/images/o-programu/bench.jpg");
+  background: linear-gradient(180deg, rgba(9, 23, 28, 0.42) 0%, rgba(9, 23, 28, 0.72) 100%),
+    image-set(
+      url("/images/o-programu/bench-desktop.avif") type("image/avif") 1x,
+      url("/images/o-programu/bench-desktop.webp") type("image/webp") 1x
+    );
+  background-size: cover;
+  background-position: center;
+}
+
+.benefitBenchCard::after {
+  display: none;
+}
+
+.benefitRelationshipCard {
+  position: relative;
+  overflow: hidden;
+}
+
+.benefitCard.benefitRelationshipCard::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 1;
+  width: 8rem;
+  height: 8rem;
+  transform: translate(-50%, 35%);
+  background: rgba(255, 255, 255, 0.12);
+  filter: drop-shadow(0 8px 18px rgba(9, 23, 28, 0.3));
+  -webkit-mask-image: url("/logo-symbol.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  mask-image: url("/logo-symbol.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
 }
 
 .benefitCard:nth-child(4n) {
@@ -266,13 +358,34 @@
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
+.benefitRelationshipCard h3,
+.benefitRelationshipCard p {
+  color: var(--color-white) !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.benefitCard.benefitRelationshipCard::before {
+  display: none;
+}
+
+.benefitBenchCard h3,
+.benefitBenchCard p {
+  color: var(--color-white) !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
 .benefitPhotoCard {
   position: relative;
   min-height: 19.5rem;
   border-radius: 0;
   overflow: hidden;
   background-image: linear-gradient(180deg, rgba(9, 23, 28, 0.22) 0%, rgba(9, 23, 28, 0.52) 100%),
-    url("/images/o-programu/IMG_4440.jpg");
+    url("/images/o-programu/people.jpg");
+  background-image: linear-gradient(180deg, rgba(9, 23, 28, 0.22) 0%, rgba(9, 23, 28, 0.52) 100%),
+    image-set(
+      url("/images/o-programu/people-desktop.avif") type("image/avif") 1x,
+      url("/images/o-programu/people-desktop.webp") type("image/webp") 1x
+    );
   background-size: cover;
   background-position: center;
   box-shadow: 0 18px 40px rgba(31, 44, 92, 0.12);
@@ -525,6 +638,54 @@
 @media (max-width: 768px) {
   .hero {
     height: 480px;
+    background-position: center;
+    background-image: linear-gradient(
+        180deg,
+        rgba(39, 59, 63, 0.18) 0%,
+        rgba(39, 59, 63, 0.45) 55%,
+        rgba(39, 59, 63, 0.65) 100%
+      ),
+      url("/images/o-programu/cora-leach-p0jz4pmnl9E-unsplash.jpg");
+    background-image: linear-gradient(
+        180deg,
+        rgba(39, 59, 63, 0.18) 0%,
+        rgba(39, 59, 63, 0.45) 55%,
+        rgba(39, 59, 63, 0.65) 100%
+      ),
+      image-set(
+        url("/images/o-programu/cora-leach-p0jz4pmnl9E-unsplash-mobile.avif") type("image/avif") 1x,
+        url("/images/o-programu/cora-leach-p0jz4pmnl9E-unsplash-mobile.webp") type("image/webp") 1x
+      );
+  }
+
+  .benefitCard:nth-child(4n + 3)::before {
+    background: linear-gradient(180deg, rgba(9, 23, 28, 0.46) 0%, rgba(9, 23, 28, 0.76) 100%),
+      url("/images/komunita/komunita.jpg");
+    background: linear-gradient(180deg, rgba(9, 23, 28, 0.46) 0%, rgba(9, 23, 28, 0.76) 100%),
+      image-set(
+        url("/images/komunita/komunita-mobile.avif") type("image/avif") 1x,
+        url("/images/komunita/komunita-mobile.webp") type("image/webp") 1x
+      );
+  }
+
+  .benefitCard.benefitBenchCard::before {
+    background: linear-gradient(180deg, rgba(9, 23, 28, 0.42) 0%, rgba(9, 23, 28, 0.72) 100%),
+      url("/images/o-programu/bench.jpg");
+    background: linear-gradient(180deg, rgba(9, 23, 28, 0.42) 0%, rgba(9, 23, 28, 0.72) 100%),
+      image-set(
+        url("/images/o-programu/bench-mobile.avif") type("image/avif") 1x,
+        url("/images/o-programu/bench-mobile.webp") type("image/webp") 1x
+      );
+  }
+
+  .benefitPhotoCard {
+    background-image: linear-gradient(180deg, rgba(9, 23, 28, 0.22) 0%, rgba(9, 23, 28, 0.52) 100%),
+      url("/images/o-programu/people.jpg");
+    background-image: linear-gradient(180deg, rgba(9, 23, 28, 0.22) 0%, rgba(9, 23, 28, 0.52) 100%),
+      image-set(
+        url("/images/o-programu/people-mobile.avif") type("image/avif") 1x,
+        url("/images/o-programu/people-mobile.webp") type("image/webp") 1x
+      );
   }
 
   .benefitsGrid {

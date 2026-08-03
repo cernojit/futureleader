@@ -28,13 +28,13 @@ const BENEFITS = [
       "Ujasníte si další pracovní i osobní kroky. Ujasníte si, co opravdu chcete tvořit, v práci i v životě.",
   },
   {
+    title: "Hlubší vztahy",
+    description: "K sobě, k lidem kolem i ke své práci.",
+  },
+  {
     title: "Komunitu",
     description:
       "Potkáte lidi, kteří chtějí tvořit podobně jako vy. Lidi, se kterými nemusíte nic hrát. Propojení na hlubší úrovni.",
-  },
-  {
-    title: "Hlubší vztahy",
-    description: "K sobě, k lidem kolem i ke své práci.",
   },
   {
     title: "Praktické zkušenosti",
@@ -51,16 +51,15 @@ const PROGRAM_TOPICS = [
   "Intuice, práce se sebou a se svým tělem",
   "Emoce, autenticita a vnitřní síla",
   "Cesta hrdiny",
-  "Leadership nové generace",
   "Týmová spolupráce",
 ] as const;
 
 const PROGRAM_SUPPORT = [
-  "Podpora mentoringu",
   "Individuální zaměření",
-  "sdílení v menších skupinách",
-  "praktické experimenty do života",
-  "komunita absolventů",
+  "Sdílení v menších skupinách",
+  "Doporučení na zkušené mentory a průvodce",
+  "Praktické experimenty do života",
+  "Síť absolventů",
 ] as const;
 
 export const metadata: Metadata = {
@@ -93,14 +92,24 @@ export default function OProgramuPage() {
           vedete a tvoříte.
         </Heading>
         <div className={styles.benefitsGrid}>
-          {BENEFITS.map((benefit) => (
-            <Card
-              key={benefit.title}
-              className={styles.benefitCard}
-              header={<Heading level={3}>{benefit.title}</Heading>}
-              text={<Text>{benefit.description}</Text>}
-            />
-          ))}
+          {BENEFITS.map((benefit) => {
+            const isBenchCard = benefit.title === "Vnitřní stabilitu a jistotu";
+            const isRelationshipCard = benefit.title === "Hlubší vztahy";
+
+            return (
+              <Card
+                key={benefit.title}
+                className={`${styles.benefitCard} ${isBenchCard ? styles.benefitBenchCard : ""} ${isRelationshipCard ? styles.benefitRelationshipCard : ""}`.trim()}
+                header={<Heading level={3}>{benefit.title}</Heading>}
+                text={<Text>{benefit.description}</Text>}
+                footer={
+                  benefit.title === "Větší jasno v sobě" ? (
+                    <span className={styles.benefitExperienceBadge}>10 let zkušeností</span>
+                  ) : undefined
+                }
+              />
+            );
+          })}
           <article className={styles.benefitPhotoCard}>
             <a href="/nezavazna-prihlaska" className={styles.benefitApplyBubble}>
               PŘIJÍMÁME
@@ -126,7 +135,7 @@ export default function OProgramuPage() {
               <div>
               <ul className={styles.bulletList}>
                 <li>už nechcete fungovat jen výkonově,</li>
-                <li>potřebujete větší směr a ukotvení,</li>
+                <li>potřebujete směr a ukotvení,</li>
                 <li>chcete vést lidi zdravěji,</li>
                 <li>hledáte hlubší smysl,</li>
                 <li>chcete být víc sami sebou,</li>
@@ -208,7 +217,7 @@ Zároveň ale přicházejí otázky:</Text>
                 <li>stojíte na životní křižovatce</li>
                 <li>chcete aktivně měnit prostor kolem sebe</li>
                 <li>toužíte tvořit autenticky</li>
-                <li>chcete být součástí inspirativní komunity</li>
+                <li>chcete být součástí inspirativní sítě absolventů</li>
               </ul>
             }
             footer={
@@ -246,36 +255,6 @@ Zároveň ale přicházejí otázky:</Text>
       </section>
 
       <section className={styles.section}>
-        <Heading level={2} className={styles.headingWithLogo}>
-          <LogoSymbol hovered={false} color="currentColor" />
-          <span>Jak program probíhá</span>
-        </Heading>
-        <div className={styles.programIntro}>
-          <Card
-            className={styles.programLeadCard}
-            header={<Heading level={3}>Program tvoří 4 víkendová setkání během roku.</Heading>}
-            text={
-              <>
-                <Text>V malé skupině 12-20 lidí.</Text>
-                <Text>
-                  Každé z nich otevírá jiné téma leadershipu, vztahu k sobě i k druhým.
-                </Text>
-              </>
-            }
-            footer={
-              <div className={styles.programMetaRow}>
-                <div className={styles.programMetaCard}>
-                  <span className={styles.programMetaLabel}>Formát</span>
-                  <span className={styles.programMetaValue}>Čtvrtek - neděle</span>
-                </div>
-                <div className={styles.programMetaCard}>
-                  <span className={styles.programMetaLabel}>Prostředí</span>
-                  <span className={styles.programMetaValue}>V bezpečném prostoru mimo běžný provoz života.</span>
-                </div>
-              </div>
-            }
-          />
-        </div>
         <div className={styles.programGrid}>
           <Card
             className={styles.programTopicsCard}

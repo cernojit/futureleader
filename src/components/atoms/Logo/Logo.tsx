@@ -15,10 +15,11 @@ export function Logo() {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <LogoSymbol hovered={hovered} />
+      <span className={styles.symbolWrap}>
+        <LogoSymbol hovered={hovered} />
+      </span>
       <span className={styles.text}>
-        <span className={styles.line}>Future</span>
-        <span className={styles.line}>Leader</span>
+        Future Leader
       </span>
     </Link>
   );
