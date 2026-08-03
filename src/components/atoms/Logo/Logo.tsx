@@ -17,8 +17,7 @@ export function Logo() {
     >
       <LogoSymbol hovered={hovered} />
       <span className={styles.text}>
-        <span className={styles.line}>Future</span>
-        <span className={styles.line}>Leader</span>
+        Future Leader
       </span>
     </Link>
   );
