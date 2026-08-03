@@ -9,7 +9,7 @@ import { Button } from "@/components/atoms/Button/Button";
 const NAV_ITEMS = [
   { href: "/", label: "Úvod" },
   { href: "/o-programu", label: "O programu" },
-  { href: "/komunita", label: "Komunita" },
+  { href: "/sit-absolventu", label: "Síť absolventů" },
   { href: "/nas-tym", label: "Náš tým" },
   { href: "/dilo-z-dilu", label: "Dílo z dílů" },
   { href: "/ohlasy", label: "Reference" },

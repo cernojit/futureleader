@@ -119,7 +119,7 @@ export default function HomePage() {
         <div className={styles.polarities}>
           <a href="/nas-tym" className={`${styles.polarity} ${styles.polarityLink}`}>10 let zkušeností</a>
           <a href="#terminy-programu" className={`${styles.polarity} ${styles.polarityLink}`}>4 prodloužené víkendy</a>
-          <a href="/komunita" className={`${styles.polarity} ${styles.polarityLink}`}>síť absolventů</a>
+          <a href="/sit-absolventu" className={`${styles.polarity} ${styles.polarityLink}`}>síť absolventů</a>
         </div>
       </section>
 
