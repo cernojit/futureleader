@@ -179,6 +179,25 @@
   padding: 0 var(--spacing-lg) var(--spacing-lg);
 }
 
+.benefitExperienceBadge {
+  position: absolute;
+  right: 30%;
+  bottom: 2rem;
+  width: 7rem;
+  height: 7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background-color: #f4dd2d;
+  color: var(--color-primary);
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  padding: 0.5rem;
+}
+
 .benefitCard::before,
 .benefitCard::after {
   content: "";
