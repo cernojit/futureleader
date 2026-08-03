@@ -96,6 +96,11 @@
   letter-spacing: 0.01em;
 }
 
+.underlinedWord {
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
 /* Polarity boxes — each in a different brand color */
 .polarities {
   display: grid;

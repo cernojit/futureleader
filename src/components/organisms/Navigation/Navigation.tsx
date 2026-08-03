@@ -44,7 +44,7 @@ export function Navigation() {
           </li>
         ))}
         <li key="/nezavazna-prihlaska">
-          <Button variant="secondary" href="/nezavazna-prihlaska" active={pathname === "/nezavazna-prihlaska"} onClick={() => setIsOpen(false)}>Toto mě volá</Button>
+          <Button variant="secondary" href="/nezavazna-prihlaska" active={pathname === "/nezavazna-prihlaska"} onClick={() => setIsOpen(false)}>Mám zájem</Button>
         </li>
       </ul>
     </nav>

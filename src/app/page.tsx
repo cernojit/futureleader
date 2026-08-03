@@ -103,7 +103,7 @@ export default function HomePage() {
               emocích i nedokonalostech.
             </Text>
             <Text>
-              Protože právě odtud vzniká autentické vedení, zdravé vztahy a
+              Protože právě odtud vzniká <span className={styles.underlinedWord}>přirozené</span> vedení, zdravé vztahy a
               smysluplné tvoření.
             </Text>
           </aside>
@@ -115,7 +115,6 @@ export default function HomePage() {
 
       <section className={styles.section}>
         <Heading level={2}>Transformační program pro ty, kteří chtějí vést <span className={styles.lightWord}>přirozeně</span> — sami sebe, vztahy, práci i život.</Heading>
-        {/* <Heading level={3}>10 let zkušeností • 4 víkendová setkání • komunita absolventů</Heading> */}
         <div className={styles.polarities}>
           <a href="/nas-tym" className={`${styles.polarity} ${styles.polarityLink}`}>10 let zkušeností</a>
           <a href="#terminy-programu" className={`${styles.polarity} ${styles.polarityLink}`}>4 prodloužené víkendy</a>
@@ -145,9 +144,10 @@ export default function HomePage() {
       <section id="terminy-programu" className={styles.programDatesSection}>
         <div className={styles.programDatesInner}>
           <Heading level={3} className={styles.programDatesHeading}>Termíny programu</Heading>
+          <Text className={styles.finalCtaText}>Začínáme vždy ve čtvrtek nebo v pátek v 17 hodin a končíme v neděli v 16 hodin.</Text>
           <div className={styles.programDatesGrid}>
             <div className={styles.programDatesCard}>
-              <span className={styles.programDatesLabel}>Termíny: Future Leader 11. běh</span>
+              <span className={styles.programDatesLabel}>Future Leader 11. běh</span>
               <ul className={styles.programDatesList}>
                 {PROGRAM_DATES_CURRENT_RUN.map((date) => (
                   <li key={date}>{date}</li>
@@ -155,7 +155,7 @@ export default function HomePage() {
               </ul>
             </div>
             <div className={styles.programDatesCard}>
-              <span className={styles.programDatesLabel}>Termíny: Future Leader 12. běh</span>
+              <span className={styles.programDatesLabel}>Future Leader 12. běh</span>
               <ul className={styles.programDatesList}>
                 {PROGRAM_DATES_12TH_RUN.map((date) => (
                   <li key={date}>{date}</li>
