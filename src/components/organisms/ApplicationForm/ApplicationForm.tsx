@@ -10,11 +10,13 @@ import styles from "./ApplicationForm.module.css";
 export function ApplicationForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [notice, setNotice] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
+    setNotice(null);
 
     const formData = new FormData(formRef.current!);
     const data = {
@@ -35,10 +37,12 @@ export function ApplicationForm() {
       if (response.ok) {
         setSubmitted(true);
       } else {
+        setNotice("Odesílání přihlášek je dočasně pozastavené. Opravíme to co nejdříve.");
         alert("Chyba při odesílání formuláře. Zkuste to prosím znovu.");
       }
     } catch (error) {
       console.error(error);
+      setNotice("Odesílání přihlášek je dočasně pozastavené. Opravíme to co nejdříve.");
       alert("Chyba při odesílání formuláře. Zkuste to prosím znovu.");
     } finally {
       setLoading(false);
@@ -56,11 +60,18 @@ export function ApplicationForm() {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit} ref={formRef}>
+      <p className={styles.notice}>
+        Odesílání přihlášek je dočasně pozastavené. Opravíme to co nejdříve.
+      </p>
+
       <Input name="name" label="Jméno" required />
       <Input name="email" label="E-mail" type="email" required />
       <Input name="subject" label="Předmět" placeholder="Mám zájem o Future Leader" />
       <Textarea name="message" label="Zpráva" required />
       <Input name="phone" label="Telefon" type="tel" />
+
+      {notice && <p className={styles.notice}>{notice}</p>}
+
       <Button type="submit" variant="primary" disabled={loading}>
         {loading ? "Odesílání..." : "Nezávazně rezervovat místo"}
       </Button>

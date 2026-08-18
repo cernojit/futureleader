@@ -1,9 +1,31 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResendClient() {
+  const apiKey = process.env.RESEND_API_KEY;
+
+  if (!apiKey) {
+    return null;
+  }
+
+  return new Resend(apiKey);
+}
 
 export async function POST(request: Request) {
   const { name, email, subject, message, phone } = await request.json();
+  const resend = getResendClient();
+  const adminEmail = process.env.ADMIN_EMAIL;
+
+  if (!resend || !adminEmail) {
+    console.error("Missing email configuration", {
+      hasResendApiKey: Boolean(process.env.RESEND_API_KEY),
+      hasAdminEmail: Boolean(adminEmail),
+    });
+
+    return Response.json(
+      { error: "Email service is not configured" },
+      { status: 503 }
+    );
+  }
 
   try {
     // Send user confirmation email
@@ -30,7 +52,7 @@ export async function POST(request: Request) {
     // Send admin notification email
     await resend.emails.send({
       from: "info@futureleader.cz",
-      to: process.env.ADMIN_EMAIL!,
+      to: adminEmail,
       subject: `Nová přihláška: ${name}`,
       html: `
         <h2>Nová přihláška do programu</h2>
