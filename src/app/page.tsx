@@ -31,9 +31,9 @@ const PROGRAM_SUPPORT = [
 
 const PROGRAM_DATES_CURRENT_RUN = [
   "Pátek – neděle: 20. – 22. 11. 2026 – Hotel Medlov",
-  "Čtvrtek – neděle: 4. – 7. 2. 2027 – Statek Odysea",
-  "Čtvrtek – neděle: 1. – 4. 4. 2027 – Statek Odysea",
-  "Čtvrtek – neděle: 17. – 20. 6. 2027 – Statek Odysea",
+  "Čtvrtek – neděle: 4. – 7. 2. 2027",
+  "Čtvrtek – neděle: 1. – 4. 4. 2027",
+  "Čtvrtek – neděle: 17. – 20. 6. 2027",
 ] as const;
 
 const PROGRAM_DATES_12TH_RUN = [
@@ -193,16 +193,15 @@ export default function HomePage() {
               </a>
             </article>
 
-            <article className={styles.programInfoCard}>
+            {/* <article className={styles.programInfoCard}>
               <Heading level={4}>Ekofarma Bílý Mrak</Heading>
               <Text>Šachov 13</Text>
               <Text> 517 21 Týniště nad Orlicí</Text>
               <a className={styles.programInfoLink} href="https://www.bilymrak.cz/">
                 www.bilymrak.cz
               </a>
-            </article>
+            </article> */}
           </div>
-
           <Text className={styles.programLocationNote}>A na dalších místech.</Text>
         </div>
       </section>
