@@ -52,7 +52,7 @@ const PROGRAM_TEAM: ReadonlyArray<TeamMember> = [
     role: "vedoucí a průvodkyně",
     bio:
       "Klára je absolventkou Future Leadera, přišla ze světa obchodu a rodinné firmy. Dnes je milující maminkou. Fandí všem, kteří na sobě chtějí pracovat a posouvat se. Sama ví, že je to výborný způsob, jak více rozzářit svůj život a v důsledku nejen ten. Má ráda dynamiku, společnost, umí si však chránit svůj klid a energii. Věří na víly, na přesahy a na vyslaná přání. Nejlépe se cítí v radosti, lásce a plynutí.",
-    imageSrc: "/images/nas-tym/Kl%C3%A1ra.webp",
+    imageSrc: "/images/nas-tym/Klara.webp",
     imageAlt: "Klára Čebišová (Valentová)",
   },
   {
@@ -109,7 +109,7 @@ export const metadata: Metadata = {
 function TeamGrid({ members }: { readonly members: ReadonlyArray<TeamMember> }) {
   return (
     <div className={styles.grid}>
-      {members.map((member) => (
+      {members.map((member, index) => (
         <Card
           key={member.name}
           className={styles.memberCard}
@@ -121,6 +121,7 @@ function TeamGrid({ members }: { readonly members: ReadonlyArray<TeamMember> }) 
               width={1200}
               height={800}
               className={styles.memberImage}
+              priority={index === 0}
             />
           }
           text={
@@ -194,6 +195,7 @@ export default function NasTymPage() {
                 width={1200}
                 height={800}
                 className={styles.tileImage}
+                priority={index === 0}
               />
               <div className={styles.memberContent}>
                 <Heading level={3}>{member.name}</Heading>

@@ -6,6 +6,10 @@ type InputProps = {
   type?: "text" | "email" | "tel";
   required?: boolean;
   placeholder?: string;
+  hasError?: boolean;
+  errorMessage?: string;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
 };
 
 export function Input({
@@ -14,9 +18,13 @@ export function Input({
   type = "text",
   required = false,
   placeholder,
+  hasError = false,
+  errorMessage,
+  onBlur,
+  onChange,
 }: InputProps) {
   return (
-    <div className={styles.field}>
+    <div className={`${styles.field} ${hasError ? styles.invalid : ""}`}>
       <label htmlFor={name} className={styles.label}>
         {label}
         {required && <span className={styles.required}> *</span>}
@@ -27,8 +35,12 @@ export function Input({
         type={type}
         required={required}
         placeholder={placeholder}
-        className={styles.input}
+        className={`${styles.input} ${hasError ? styles.invalidInput : ""}`}
+        aria-invalid={hasError}
+        onBlur={onBlur}
+        onChange={onChange}
       />
+      {hasError && errorMessage ? <span className={styles.errorMessage}>{errorMessage}</span> : null}
     </div>
   );
 }

@@ -6,6 +6,9 @@ type TextareaProps = {
   required?: boolean;
   placeholder?: string;
   rows?: number;
+  hasError?: boolean;
+  onBlur?: React.FocusEventHandler<HTMLTextAreaElement>;
+  onChange?: React.ChangeEventHandler<HTMLTextAreaElement>;
 };
 
 export function Textarea({
@@ -14,9 +17,12 @@ export function Textarea({
   required = false,
   placeholder,
   rows = 5,
+  hasError = false,
+  onBlur,
+  onChange,
 }: TextareaProps) {
   return (
-    <div className={styles.field}>
+    <div className={`${styles.field} ${hasError ? styles.invalid : ""}`}>
       <label htmlFor={name} className={styles.label}>
         {label}
         {required && <span className={styles.required}> *</span>}
@@ -27,7 +33,10 @@ export function Textarea({
         required={required}
         placeholder={placeholder}
         rows={rows}
-        className={styles.textarea}
+        className={`${styles.textarea} ${hasError ? styles.invalidTextarea : ""}`}
+        aria-invalid={hasError}
+        onBlur={onBlur}
+        onChange={onChange}
       />
     </div>
   );

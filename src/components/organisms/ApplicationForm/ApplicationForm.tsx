@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Input } from "@/components/atoms/Input/Input";
 import { Textarea } from "@/components/atoms/Textarea/Textarea";
 import { Button } from "@/components/atoms/Button/Button";
@@ -9,30 +9,71 @@ import styles from "./ApplicationForm.module.css";
 
 export function ApplicationForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [notice, setNotice] = useState<string | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setNotice(null);
+
+    const formData = new FormData(formRef.current!);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+      phone: formData.get("phone"),
+    };
+
+    try {
+      const response = await fetch("/api/submit-application", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        setNotice("Odesílání přihlášek je dočasně pozastavené. Opravíme to co nejdříve.");
+        alert("Chyba při odesílání formuláře. Zkuste to prosím znovu.");
+      }
+    } catch (error) {
+      console.error(error);
+      setNotice("Odesílání přihlášek je dočasně pozastavené. Opravíme to co nejdříve.");
+      alert("Chyba při odesílání formuláře. Zkuste to prosím znovu.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   if (submitted) {
     return (
       <div className={styles.success}>
         <Heading level={2}>Děkujeme!</Heading>
-        <p>Brzy se Vám ozveme.</p>
+        <p>Brzy se Vám ozveme. Ověřovací email jsme poslali na vašu emailovou adresu.</p>
       </div>
     );
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit} ref={formRef}>
+      <p className={styles.notice}>
+        Odesílání přihlášek je dočasně pozastavené. Opravíme to co nejdříve.
+      </p>
+
       <Input name="name" label="Jméno" required />
       <Input name="email" label="E-mail" type="email" required />
       <Input name="subject" label="Předmět" placeholder="Mám zájem o Future Leader" />
       <Textarea name="message" label="Zpráva" required />
       <Input name="phone" label="Telefon" type="tel" />
-      <Button type="submit" variant="primary">
-        Nezávazně rezervovat místo
+
+      {notice && <p className={styles.notice}>{notice}</p>}
+
+      <Button type="submit" variant="primary" disabled={loading}>
+        {loading ? "Odesílání..." : "Nezávazně rezervovat místo"}
       </Button>
     </form>
   );
