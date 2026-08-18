@@ -1,14 +1,6 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import { PageLayout } from "@/components/templates/PageLayout/PageLayout";
 import "@/styles/globals.css";
-
-const poppins = Poppins({
-  subsets: ["latin", "latin-ext"],
-  weight: ["200", "400", "600"],
-  display: "swap",
-  variable: "--font-poppins",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.futureleader.cz"),
@@ -56,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="cs" className={poppins.variable}>
+    <html lang="cs">
       <body>
         <script
           type="application/ld+json"

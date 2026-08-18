@@ -30,7 +30,7 @@ const PROGRAM_SUPPORT = [
 ] as const;
 
 const PROGRAM_DATES_CURRENT_RUN = [
-  "Pátek – neděle: 27. – 29. 11. 2026 – Ekofarma Bílý Mrak",
+  "Pátek – neděle: 20. – 22. 11. 2026 – Hotel Medlov",
   "Čtvrtek – neděle: 4. – 7. 2. 2027 – Statek Odysea",
   "Čtvrtek – neděle: 1. – 4. 4. 2027 – Statek Odysea",
   "Čtvrtek – neděle: 17. – 20. 6. 2027 – Statek Odysea",
@@ -181,41 +181,39 @@ export default function HomePage() {
           <Heading level={3}>Místo konání</Heading>
           <div className={styles.programLocationsGrid}>
             <article className={styles.programInfoCard}>
-              <Heading level={4}>Statek Odysea</Heading>
+              <Heading level={4}>Hotel Medlov</Heading>
               <Text>
-                Statek Odysea, Nuzířov 10, Malhostovice, 666 03
+                Fryšava pod Žákovou horou 143
               </Text>
-              <a
-                className={styles.programInfoLink}
-                href="https://www.google.com/maps/place/Nuz%C3%AD%C5%99ov+10,+666+03+Malhostovice-Ti%C5%A1nov+3/@49.3436681,16.5177606,17z/data=!3m1!4b1!4m6!3m5!1s0x4712855e09330499:0xa0bcc194d925ab76!8m2!3d49.3436646!4d16.5203355!16s%2Fg%2F11crx58syg?entry=ttu&g_ep=EgoyMDI0MTIwMy4wIKXMDSoASAFQAw%3D%3D"
-              >
-                Zobrazit na mapě
-              </a>
-              <a className={styles.programInfoLink} href="http://www.statekodysea.cz/">
-                www.statekodysea.cz
+              <Text> 
+                592 31 Fryšava pod Žákovou horou
+              </Text>
+              <a className={styles.programInfoLink} href="http://www.medlovhotel.cz/">
+                www.medlovhotel.cz
               </a>
             </article>
 
             <article className={styles.programInfoCard}>
               <Heading level={4}>Ekofarma Bílý Mrak</Heading>
-              <Text>Šachov 13, 517 21 Týniště nad Orlicí</Text>
+              <Text>Šachov 13</Text>
+              <Text> 517 21 Týniště nad Orlicí</Text>
               <a className={styles.programInfoLink} href="https://www.bilymrak.cz/">
                 www.bilymrak.cz
               </a>
             </article>
           </div>
 
-          <Text className={styles.programLocationNote}>Změna místa vyhrazena.</Text>
+          <Text className={styles.programLocationNote}>A na dalších místech.</Text>
         </div>
       </section>
 
       <section className={styles.programPricingSection}>
         <div className={styles.programInfoInner}>
-          <Heading level={2}>Investice do programu</Heading>
+          <Heading level={2}>Cena programu</Heading>
           <div className={styles.pricingLayout}>
             <article className={`${styles.programInfoCard} ${styles.programPricingCard}`}>
                 <Text>
-                  <strong>8 000 Kč za modul</strong> (čtvrtek/pátek–neděle).
+                  <strong>9 000 Kč za modul</strong> (čtvrtek/pátek–neděle).
                 </Text>
                 <Text>
                   <strong>Nejste si jistí?</strong> Přihlaste se na první modul a pak se
