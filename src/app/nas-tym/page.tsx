@@ -109,7 +109,7 @@ export const metadata: Metadata = {
 function TeamGrid({ members }: { readonly members: ReadonlyArray<TeamMember> }) {
   return (
     <div className={styles.grid}>
-      {members.map((member) => (
+      {members.map((member, index) => (
         <Card
           key={member.name}
           className={styles.memberCard}
@@ -121,6 +121,7 @@ function TeamGrid({ members }: { readonly members: ReadonlyArray<TeamMember> }) 
               width={1200}
               height={800}
               className={styles.memberImage}
+              priority={index === 0}
             />
           }
           text={
@@ -194,6 +195,7 @@ export default function NasTymPage() {
                 width={1200}
                 height={800}
                 className={styles.tileImage}
+                priority={index === 0}
               />
               <div className={styles.memberContent}>
                 <Heading level={3}>{member.name}</Heading>

@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   },
   description:
     "Seberozvojový program pro každého, kdo má odvahu vést. Devět měsíců, čtyři prodloužené víkendy, celoživotní komunita.",
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
   openGraph: {
     url: "/",
     locale: "cs_CZ",
