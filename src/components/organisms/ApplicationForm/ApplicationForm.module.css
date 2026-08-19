@@ -6,6 +6,12 @@
   margin-top: var(--spacing-lg);
 }
 
+.helperText {
+  margin: 0;
+  color: var(--color-text-soft, #4b5563);
+  font-size: 0.95rem;
+}
+
 .success {
   display: flex;
   flex-direction: column;

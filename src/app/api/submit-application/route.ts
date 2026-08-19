@@ -1,23 +1,48 @@
-import { Resend } from "resend";
+const brevoApiUrl = "https://api.brevo.com/v3/smtp/email";
 
-function getResendClient() {
-  const apiKey = process.env.RESEND_API_KEY;
+async function sendEmail(email: {
+  to: string;
+  subject: string;
+  htmlContent: string;
+  replyTo?: string;
+}) {
+  const response = await fetch(brevoApiUrl, {
+    method: "POST",
+    headers: {
+      accept: "application/json",
+      "api-key": process.env.BREVO_API_KEY!,
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      sender: {
+        email: process.env.BREVO_SENDER_EMAIL,
+        name: "Future Leader",
+      },
+      to: [{ email: email.to }],
+      subject: email.subject,
+      htmlContent: email.htmlContent,
+      ...(email.replyTo ? { replyTo: { email: email.replyTo } } : {}),
+    }),
+  });
 
-  if (!apiKey) {
-    return null;
+  if (!response.ok) {
+    throw new Error(`Brevo returned ${response.status}: ${await response.text()}`);
   }
-
-  return new Resend(apiKey);
 }
 
 export async function POST(request: Request) {
   const { name, email, subject, message, phone } = await request.json();
-  const resend = getResendClient();
+  const applicationSubject = typeof subject === "string" && subject.trim()
+    ? subject.trim()
+    : "Mám zájem o Future Leader";
+  const brevoApiKey = process.env.BREVO_API_KEY;
+  const senderEmail = process.env.BREVO_SENDER_EMAIL;
   const adminEmail = process.env.ADMIN_EMAIL;
 
-  if (!resend || !adminEmail) {
+  if (!brevoApiKey || !senderEmail || !adminEmail) {
     console.error("Missing email configuration", {
-      hasResendApiKey: Boolean(process.env.RESEND_API_KEY),
+      hasBrevoApiKey: Boolean(brevoApiKey),
+      hasSenderEmail: Boolean(senderEmail),
       hasAdminEmail: Boolean(adminEmail),
     });
 
@@ -28,12 +53,10 @@ export async function POST(request: Request) {
   }
 
   try {
-    // Send user confirmation email
-    await resend.emails.send({
-      from: "info@futureleader.cz",
+    await sendEmail({
       to: email,
       subject: "Potvrzení přihlášky - Future Leader",
-      html: `
+      htmlContent: `
         <h2>Děkujeme za vaši přihlášku!</h2>
         <p>Ahoj ${name},</p>
         <p>Přijali jsme vaši přihlášku do programu Future Leader. Brzy se vám ozveme.</p>
@@ -42,24 +65,23 @@ export async function POST(request: Request) {
           <li><strong>Jméno:</strong> ${name}</li>
           <li><strong>Email:</strong> ${email}</li>
           <li><strong>Telefon:</strong> ${phone || "Neuvedeno"}</li>
-          <li><strong>Předmět:</strong> ${subject || "Neuvedeno"}</li>
+          <li><strong>Předmět:</strong> ${applicationSubject}</li>
           <li><strong>Zpráva:</strong> ${message}</li>
         </ul>
         <p>S pozdravem,<br>Tým Future Leader</p>
       `,
     });
 
-    // Send admin notification email
-    await resend.emails.send({
-      from: "info@futureleader.cz",
+    await sendEmail({
       to: adminEmail,
       subject: `Nová přihláška: ${name}`,
-      html: `
+      replyTo: email,
+      htmlContent: `
         <h2>Nová přihláška do programu</h2>
         <p><strong>Jméno:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Telefon:</strong> ${phone || "Neuvedeno"}</p>
-        <p><strong>Předmět:</strong> ${subject || "Neuvedeno"}</p>
+        <p><strong>Předmět:</strong> ${applicationSubject}</p>
         <p><strong>Zpráva:</strong></p>
         <p>${message.replace(/\n/g, "<br>")}</p>
       `,

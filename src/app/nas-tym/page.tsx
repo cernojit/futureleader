@@ -49,7 +49,7 @@ const LECTORS: ReadonlyArray<TeamMember> = [
 const PROGRAM_TEAM: ReadonlyArray<TeamMember> = [
   {
     name: "Klára Čebišová (Valentová)",
-    role: "vedoucí a průvodkyně",
+    role: "ředitelka Akády",
     bio:
       "Klára je absolventkou Future Leadera, přišla ze světa obchodu a rodinné firmy. Dnes je milující maminkou. Fandí všem, kteří na sobě chtějí pracovat a posouvat se. Sama ví, že je to výborný způsob, jak více rozzářit svůj život a v důsledku nejen ten. Má ráda dynamiku, společnost, umí si však chránit svůj klid a energii. Věří na víly, na přesahy a na vyslaná přání. Nejlépe se cítí v radosti, lásce a plynutí.",
     imageSrc: "/images/nas-tym/Klara.webp",
@@ -157,10 +157,14 @@ export default function NasTymPage() {
   return (
     <>
       <Heading level={1}>Náš tým</Heading>
+      <Text size="lg" className={styles.introText}>
+        Za programem Future Leader stojí lidé, kteří věří, že skutečné vedení začíná u schopnosti být sám sebou. Provázíme vás na cestě k větší jasnosti, odvaze a tvorbě, která má smysl.
+      </Text>
 
       <section className={styles.section}>
         <Heading level={2}>Lektoři</Heading>
         <TeamGrid members={LECTORS} />
+        <Text weight="semibold">A další hosté.</Text>
       </section>
 
       <section className={styles.section}>
