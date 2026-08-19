@@ -652,6 +652,11 @@
   box-shadow: 0 18px 40px rgba(31, 44, 92, 0.05);
 }
 
+.serviceFeeNote {
+  font-size: 0.8rem !important;
+  font-style: italic;
+}
+
 .pricingNote {
   display: flex;
   flex-direction: column;

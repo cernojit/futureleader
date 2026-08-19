@@ -26,6 +26,7 @@ const REQUIRED_FIELDS = [
 export function ProfileForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [notice, setNotice] = useState<string | null>(null);
   const [errors, setErrors] = useState<Record<string, boolean>>({});
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -59,6 +60,7 @@ export function ProfileForm() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
+    setNotice(null);
 
     const formData = new FormData(formRef.current!);
     const nextErrors: Record<string, boolean> = {};
@@ -77,13 +79,22 @@ export function ProfileForm() {
       return;
     }
 
-    const data = Object.fromEntries(formData.entries());
-
     try {
-      console.log("Profile form submitted", data);
-      setSubmitted(true);
+      const response = await fetch("/api/submit-profile", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(formData.entries())),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        setNotice("Odesílání profilů je dočasně pozastavené. Opravíme to co nejdříve.");
+        alert("Chyba při odesílání profilu. Zkuste to prosím znovu.");
+      }
     } catch (error) {
       console.error(error);
+      setNotice("Odesílání profilů je dočasně pozastavené. Opravíme to co nejdříve.");
       alert("Při odesílání formuláře došlo k chybě. Zkuste to prosím znovu.");
     } finally {
       setLoading(false);
@@ -94,7 +105,7 @@ export function ProfileForm() {
     return (
       <div className={styles.success}>
         <Heading level={2}>Profil byl uložen</Heading>
-        <p>Vaše údaje byly zaznamenány. Brzy je možné upravit podle dalších požadavků.</p>
+        <p>Vaše údaje jsme přijali. Potvrzení jsme poslali na váš e-mail.</p>
       </div>
     );
   }
@@ -211,6 +222,7 @@ export function ProfileForm() {
         onBlur={(event) => updateFieldError(event.currentTarget.name)}
         onChange={(event) => updateFieldError(event.currentTarget.name)}
       />
+      {notice && <p className={styles.notice}>{notice}</p>}
       <Button type="submit" variant="primary" disabled={loading}>
         {loading ? "Odesílání..." : "Odeslat profil účastníka"}
       </Button>

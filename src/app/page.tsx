@@ -121,7 +121,7 @@ export default function HomePage() {
       <Divider />
 
       <section className={styles.section}>
-        <Heading level={2}>Transformační program pro ty, kteří chtějí vést <span className={styles.lightWord}>přirozeně</span> — sami sebe, vztahy, práci i život.</Heading>
+        <Heading level={2}>Transformační program pro ty, kteří chtějí vést přirozeně — sami sebe, vztahy, práci i život.</Heading>
         <div className={styles.polarities}>
           <a href="/nas-tym" className={`${styles.polarity} ${styles.polarityLink}`}>10 let zkušeností</a>
           <a href="#terminy-programu" className={`${styles.polarity} ${styles.polarityLink}`}>4 prodloužené víkendy</a>
@@ -212,20 +212,20 @@ export default function HomePage() {
           <div className={styles.pricingLayout}>
             <article className={`${styles.programInfoCard} ${styles.programPricingCard}`}>
                 <Text>
-                  <strong>9 000 Kč za modul</strong> (čtvrtek/pátek–neděle).
+                  <strong>9 000 Kč za víkend</strong> (čtvrtek/pátek–neděle)
                 </Text>
                 <Text>
-                  <strong>Nejste si jistí?</strong> Přihlaste se na první modul a pak se
+                  <strong>+ 2 000 Kč za noc</strong> za ubytování a stravu
+                </Text>
+                <Text>
+                  <strong>Nejste si jistí?</strong> Přihlaste se na první víkend a pak se
                   rozhodněte, zda budete pokračovat.
                 </Text>
                 <Text>
-                  <strong>2 000 Kč za noc</strong> za ubytování a stravu.
-                </Text>
-                <Text>
-                  Bez ubytování činí servisní poplatek 2 000 Kč za modul.
-                </Text>
-                <Text>
                   Pokud vám v účasti brání finance, ozvěte se nám.
+                </Text>
+                <Text className={styles.serviceFeeNote}>
+                  (Bez ubytování činí servisní poplatek 2 000 Kč)
                 </Text>
 
                 <div className={styles.programInfoActions}>
