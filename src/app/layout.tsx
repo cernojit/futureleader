@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { PageLayout } from "@/components/templates/PageLayout/PageLayout";
 import "@/styles/globals.css";
 
@@ -63,6 +64,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <PageLayout>{children}</PageLayout>
+        <Analytics />
       </body>
     </html>
   );
