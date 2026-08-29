@@ -30,7 +30,8 @@ async function sendEmail(email: {
   subject: string;
   htmlContent: string;
   replyTo?: string;
-}) {
+}, context: { requestId: string; recipientRole: "applicant" | "admin" }) {
+  const startedAt = Date.now();
   const response = await fetch(brevoApiUrl, {
     method: "POST",
     headers: {
@@ -51,11 +52,28 @@ async function sendEmail(email: {
   });
 
   if (!response.ok) {
-    throw new Error(`Brevo returned ${response.status}: ${await response.text()}`);
+    const responseBody = await response.text();
+    console.error("email_failed", {
+      ...context,
+      provider: "brevo",
+      status: response.status,
+      durationMs: Date.now() - startedAt,
+    });
+    throw new Error(`Brevo returned ${response.status}: ${responseBody}`);
   }
+
+  const responseBody = await response.json().catch(() => ({}));
+  console.info("email_sent", {
+    ...context,
+    provider: "brevo",
+    status: response.status,
+    messageId: responseBody.messageId,
+    durationMs: Date.now() - startedAt,
+  });
 }
 
 export async function POST(request: Request) {
+  const requestId = crypto.randomUUID();
   const payload = await request.json().catch(() => null);
   const values = new Map<string, string>();
 
@@ -110,7 +128,7 @@ export async function POST(request: Request) {
         <p>Váš profil jsme přijali. Děkujeme za jeho vyplnění.</p>
         <p>S pozdravem,<br>Tým Future Leader</p>
       `,
-    });
+      }, { requestId, recipientRole: "applicant" });
 
     await sendEmail({
       to: adminEmail,
@@ -120,11 +138,11 @@ export async function POST(request: Request) {
         <h2>Nový profil účastníka - ${safeName}</h2>
         <ul>${profileHtml}</ul>
       `,
-    });
+    }, { requestId, recipientRole: "admin" });
 
     return Response.json({ success: true });
   } catch (error) {
-    console.error("Email error:", error);
+    console.error("email_submission_failed", { requestId, error });
     return Response.json(
       { error: "Failed to send email" },
       { status: 500 }

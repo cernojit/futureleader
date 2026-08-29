@@ -20,6 +20,22 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Email delivery monitoring
+
+The application sends email through Brevo and receives delivery events at:
+
+```text
+https://www.futureleader.cz/api/brevo-webhook
+```
+
+Add `BREVO_WEBHOOK_TOKEN` as a production environment variable in Vercel. In Brevo, open **Account name > Integrations > Webhooks**, create an **Outbound webhook**, and configure either token authentication with the same value or this custom header:
+
+```text
+x-brevo-webhook-token: <the same token>
+```
+
+Select the transactional email events `delivered`, `soft_bounce`, `hard_bounce`, `blocked`, `invalid_email`, and `error`, then activate the webhook. Delivery events appear in Vercel under **Project > Logs** as `brevo_email_event`. The `messageId` in these logs can be matched with the `messageId` from `email_sent`.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
