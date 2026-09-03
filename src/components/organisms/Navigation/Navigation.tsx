@@ -11,8 +11,8 @@ const NAV_ITEMS = [
   { href: "/o-programu", label: "O programu" },
   { href: "/sit-absolventu", label: "Síť absolventů" },
   { href: "/nas-tym", label: "Náš tým" },
-  { href: "/dilo-z-dilu", label: "Dílo z dílů" },
   { href: "/ohlasy", label: "Reference" },
+  { href: "/dilo-z-dilu", label: "Dílo z dílů" },
 ];
 
 export function Navigation() {
