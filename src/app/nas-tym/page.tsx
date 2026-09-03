@@ -213,10 +213,18 @@ export default function NasTymPage() {
 
       <section className={styles.thanksSection}>
         <div className={styles.thanksInner}>
+          <p className={styles.thanksTitle}>Děkujeme</p>
           <Text className={styles.thanksText}>
-            Velmi děkujeme všem, kteří program Future Leader uvedli do života – Ivana Sládková, Zdeněk Štěpánek, Lea Paulínová, Mirek Spousta, Tamara Kováčová, Silvie Pýchová a Ondřej Klouček. Děkujeme také všem lektorům programu - Zdeňkovi Štěpánkovi, Jirkovi Šmejkalovi, Helence Futerové, Monice Kubasové, Martinu Holčíkovi, Světle Holasové a Aleně Jáchimové. Velmi děkujeme Ivance Sládkové za více než desetiletou starostlivou a láskyplnou péči o celý program Future Leader a jeho síť absolventů.
+            Velmi děkujeme všem, kteří program Future Leader uvedli do života – Ivana Sládková, Zdeněk Štěpánek, Lea Paulínová, Mirek Spousta, Tamara Kováčová, Silvie Pýchová a Ondřej Klouček. Děkujeme také všem lektorům programu – Zdeňkovi Štěpánkovi, Jirkovi Šmejkalovi, Helence Futerové, Monice Kubasové, Martinu Holčíkovi, Světle Holasové a Aleně Jáchimové. Velmi děkujeme Ivance Sládkové za více než desetiletou starostlivou a láskyplnou péči o celý program Future Leader a jeho síť absolventů.
           </Text>
         </div>
+      </section>
+
+      <section className={styles.section}>
+        <Heading level={2}>Future Leader – nová generace programu</Heading>
+        <Text>
+          Deset let zkušeností, na kterých stavíme, a nový pohled na to, co dnes potřebují lidé, kteří chtějí tvořit, spolupracovat a ovlivňovat svět kolem sebe. Navazujeme na to nejlepší z historie Future Leadera a zároveň jdeme vlastní cestou. Aktualizujeme obsah, způsob práce i témata tak, aby odpovídaly lidem a světu, ve kterém žijeme dnes. <strong>Respektujeme kořeny. Tvoříme další kapitolu.</strong>
+        </Text>
       </section>
     </>
   );

@@ -19,7 +19,8 @@ export function Logo() {
         <LogoSymbol hovered={hovered} />
       </span>
       <span className={styles.text}>
-        Future Leader
+        <span>Future Leader</span>
+        <span className={styles.tagline}>nová generace</span>
       </span>
     </Link>
   );

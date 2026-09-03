@@ -47,7 +47,7 @@ const PHILOSOPHY_VALUES = [
   "znají sami sebe",
   "umí převzít zodpovědnost",
   "dokážou spolupracovat",
-  "a tvoří ze svého středu",
+  "a žijí svůj potenciál",
 ] as const;
 
 export const metadata: Metadata = {
@@ -161,48 +161,23 @@ export default function HomePage() {
                 ))}
               </ul>
             </div>
+
             <div className={styles.programDatesCard}>
-              <span className={styles.programDatesLabel}>Future Leader 12. běh</span>
-              <ul className={styles.programDatesList}>
-                {PROGRAM_DATES_12TH_RUN.map((date) => (
-                  <li key={date}>{date}</li>
-                ))}
-              </ul>
+              <span className={styles.programDatesLabel}>Místo konání</span>
+              <div className={styles.programLocationDetails}>
+                <Heading level={4} className={styles.programLocationHeading}>Hotel Medlov</Heading>
+                <Text className={styles.programLocationText}>Fryšava pod Žákovou horou 143</Text>
+                <Text className={styles.programLocationText}>592 31 Fryšava pod Žákovou horou</Text>
+                <a className={styles.programLocationLink} href="http://www.medlovhotel.cz/" target="_blank" rel="noopener noreferrer">
+                  www.medlovhotel.cz
+                </a>
+                <Text className={styles.programLocationNote}>... a na dalších místech.</Text>
+              </div>
             </div>
           </div>
-        <div className={styles.cta}>
-          <Button href="/nezavazna-prihlaska">Mám zájem</Button>
-        </div>
-        </div>
-      </section>
-
-      <section className={styles.programLocationsSection}>
-        <div className={styles.programInfoInner}>
-          <Heading level={3}>Místo konání</Heading>
-          <div className={styles.programLocationsGrid}>
-            <article className={styles.programInfoCard}>
-              <Heading level={4}>Hotel Medlov</Heading>
-              <Text>
-                Fryšava pod Žákovou horou 143
-              </Text>
-              <Text> 
-                592 31 Fryšava pod Žákovou horou
-              </Text>
-              <a className={styles.programInfoLink} href="http://www.medlovhotel.cz/">
-                www.medlovhotel.cz
-              </a>
-            </article>
-
-            {/* <article className={styles.programInfoCard}>
-              <Heading level={4}>Ekofarma Bílý Mrak</Heading>
-              <Text>Šachov 13</Text>
-              <Text> 517 21 Týniště nad Orlicí</Text>
-              <a className={styles.programInfoLink} href="https://www.bilymrak.cz/">
-                www.bilymrak.cz
-              </a>
-            </article> */}
+          <div className={styles.cta}>
+            <Button href="/nezavazna-prihlaska">Mám zájem</Button>
           </div>
-          <Text className={styles.programLocationNote}>A na dalších místech.</Text>
         </div>
       </section>
 

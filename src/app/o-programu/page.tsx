@@ -221,9 +221,12 @@ Zároveň ale přicházejí otázky:</Text>
               </ul>
             }
             footer={
-              <div className={styles.audienceMeta}>
-                <span className={styles.audienceMetaLabel}>Věk účastníků</span>
-                <span className={styles.audienceMetaValue}>24–39 let</span>
+              <div className={styles.audienceMetaWrap}>
+                <div className={styles.audienceMeta}>
+                  <span className={styles.audienceMetaLabel}>Věk účastníků</span>
+                  <span className={styles.audienceMetaValue}>24–39 let<span className={styles.audienceAsterisk}>*</span></span>
+                </div>
+                <Text className={styles.audienceNote}><span className={styles.audienceAsterisk}>*</span>pokud nejste v této hranici a i přesto si myslíte, že je program pro Vás, ozvěte se</Text>
               </div>
             }
           />

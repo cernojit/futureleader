@@ -368,6 +368,36 @@
   color: var(--color-accent-yellow);
 }
 
+.programDatesSection .programDatesCard p,
+.programDatesSection .programLocationNote,
+.programDatesSection .programLocationText,
+.programDatesSection .programDatesList li {
+  color: var(--color-beige);
+}
+
+.programLocationDetails {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  color: var(--color-beige);
+}
+
+.programLocationHeading {
+  color: var(--color-white) !important;
+}
+
+.programLocationText {
+  margin: 0;
+  color: var(--color-beige);
+}
+
+.programLocationLink {
+  color: var(--color-accent-yellow);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 .programDatesList {
   margin: 0;
   padding: 0;
@@ -430,6 +460,8 @@
 
 .programLocationNote {
   font-weight: var(--font-weight-semibold);
+  font-size: 0.8rem !important;
+  margin-top: var(--spacing-sm);
 }
 
 .programPricingCard {
