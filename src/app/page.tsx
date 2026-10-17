@@ -30,10 +30,10 @@ const PROGRAM_SUPPORT = [
 ] as const;
 
 const PROGRAM_DATES_CURRENT_RUN = [
-  "Pátek – neděle: 20. – 22. 11. 2026 – Hotel Medlov",
-  "Čtvrtek – neděle: 4. – 7. 2. 2027",
-  "Čtvrtek – neděle: 1. – 4. 4. 2027",
-  "Čtvrtek – neděle: 17. – 20. 6. 2027",
+  "Pátek – neděle: 29.1. – 31.1. 2027 – Hotel Medlov",
+  "Čtvrtek – neděle: 8. – 11. 4. 2027 – Bílý Mrak, Šachov",
+  "Čtvrtek – neděle: 10. – 13. 6. 2027 – Bílý Mrak, Šachov",
+  "Čtvrtek – neděle: 23. – 26. 9. 2027 – Bílý Mrak, Šachov",
 ] as const;
 
 const PROGRAM_DATES_12TH_RUN = [
@@ -152,18 +152,17 @@ export default function HomePage() {
         <div className={styles.programDatesInner}>
           <Heading level={3} className={styles.programDatesHeading}>Termíny programu</Heading>
           <Text className={styles.finalCtaText}>Začínáme vždy ve čtvrtek nebo v pátek v 17 hodin a končíme v neděli v 16 hodin.</Text>
-          <div className={styles.programDatesGrid}>
-            <div className={styles.programDatesCard}>
-              <span className={styles.programDatesLabel}>Future Leader 11. běh</span>
-              <ul className={styles.programDatesList}>
-                {PROGRAM_DATES_CURRENT_RUN.map((date) => (
-                  <li key={date}>{date}</li>
-                ))}
-              </ul>
-            </div>
+          <div className={styles.programDatesCard}>
+            <span className={styles.programDatesLabel}>Future Leader 11. běh</span>
+            <ul className={styles.programDatesList}>
+              {PROGRAM_DATES_CURRENT_RUN.map((date) => (
+                <li key={date}>{date}</li>
+              ))}
+            </ul>
+          </div>
 
+          <div className={styles.programLocationsGrid}>
             <div className={styles.programDatesCard}>
-              <span className={styles.programDatesLabel}>Místo konání</span>
               <div className={styles.programLocationDetails}>
                 <Heading level={4} className={styles.programLocationHeading}>Hotel Medlov</Heading>
                 <Text className={styles.programLocationText}>Fryšava pod Žákovou horou 143</Text>
@@ -171,7 +170,16 @@ export default function HomePage() {
                 <a className={styles.programLocationLink} href="http://www.medlovhotel.cz/" target="_blank" rel="noopener noreferrer">
                   www.medlovhotel.cz
                 </a>
-                <Text className={styles.programLocationNote}>... a na dalších místech.</Text>
+              </div>
+            </div>
+            <div className={styles.programDatesCard}>
+              <div className={styles.programLocationDetails}>
+                <Heading level={4} className={styles.programLocationHeading}>Ekofarma Bílý Mrak</Heading>
+                <Text className={styles.programLocationText}>Šachov 13</Text>
+                <Text className={styles.programLocationText}>517 21 Týniště nad Orlicí</Text>
+                <a className={styles.programLocationLink} href="https://www.bilymrak.cz/" target="_blank" rel="noopener noreferrer">
+                  www.bilymrak.cz
+                </a>
               </div>
             </div>
           </div>

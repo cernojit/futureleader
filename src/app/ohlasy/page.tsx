@@ -120,15 +120,6 @@ export default function OhlasyPage() {
       {/* 9. ročník */}
       <section className={styles.section}>
         <Heading level={2}>Ohlasy 9. ročníku</Heading>
-        <div className={styles.videoFullWidth}>
-          <iframe
-            src="https://www.youtube.com/embed/GbyGL2GWRdM"
-            title="Future Leader — 9. ročník"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className={styles.videoIframe}
-          />
-        </div>
         <TestimonialCard
           name={TESTIMONIALS_9[0].name}
           role={TESTIMONIALS_9[0].role}
@@ -214,6 +205,18 @@ export default function OhlasyPage() {
           mladé lídry před pár lety začal připravovat, stačilo jen navázat.
         </Text>
       </section>
+
+    <section className={styles.section}>
+      <div className={styles.videoFullWidth}>
+          <iframe
+            src="https://www.youtube.com/embed/GbyGL2GWRdM"
+            title="Future Leader — 9. ročník"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className={styles.videoIframe}
+          />
+        </div>
+        </section>
     </>
   );
 }

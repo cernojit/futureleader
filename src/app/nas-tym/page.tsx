@@ -33,16 +33,13 @@ const LECTORS: ReadonlyArray<TeamMember> = [
     ],
   },
   {
-    name: "Alena Jáchimová",
-    role: "průvodkyně spirálovou dynamikou",
+    name: "Martin Holčík",
+    role: "lektor a kouč pro lídry a týmy",
     bio:
-      "Koučka a lektorka, která věří, že sebepoznání je klíčem k lepšímu životu i práci. S její zkušeností z vedení týmů, firemní kultury a koučování se můžete těšit na interaktivní, hravou a objevnou cestu, která vás provede poznáváním vlastních hodnot a potenciálu.",
-    imageSrc: "/images/nas-tym/Alena_Jachimova.webp",
-    imageAlt: "Alena Jáchimová",
-    links: [
-      { label: "Osobní web", href: "http://alenajachimova.cz/" },
-      { label: "Power Coaching", href: "https://www.powercoaching.cz/" },
-    ],
+      "Vést znamená vykročit dřív, než máme jistotu. Každý, kdo to zkusil, zná ten okamžik na prahu: něco ho táhne dál a něco jiného drží zpátky. Rád stojím vedle lidí, kteří se rozhodnou jít, a potkají přitom i to, čemu se dlouho vyhýbali.\n\nDevatenáct let jsem byl majitelem a ředitelem firmy a nejvíc mě naučily chvíle, kdy jsem si nevěděl rady. Při společné práci propojuji meditace, otázky a zážitky. Mám rád hloubku, lehkost a humor. Záleží mi na tom, s čím se člověk vrací domů: s klidnější odvahou, větší důvěrou ve vlastní hlas a ochotou nést odpovědnost za své kroky.\n\nFuture Leadera jsem vedl v 9. ročníku, teď se připojuji k týmu 11. ročníku po boku Světly Holasové.",
+    imageSrc: "/images/nas-tym/Martin_Holcik.webp",
+    imageAlt: "Martin Holčík",
+    links: [{ label: "www.martinholcik.cz", href: "https://www.martinholcik.cz/" }],
   },
 ];
 
@@ -127,7 +124,9 @@ function TeamGrid({ members }: { readonly members: ReadonlyArray<TeamMember> }) 
           text={
             <div className={styles.memberContent}>
               <p className={styles.memberRole}>{member.role}</p>
-              <Text>{member.bio}</Text>
+              {member.bio.split(/\n\n+/).map((paragraph, paragraphIndex) => (
+                <Text key={`${member.name}-${paragraphIndex}`}>{paragraph}</Text>
+              ))}
             </div>
           }
           footer={
