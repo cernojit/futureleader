@@ -406,6 +406,10 @@
   gap: 0.5rem;
 }
 
+.programDatesSection .programLocationsGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .programDatesList li {
   line-height: 1.5;
   color: var(--color-beige);
@@ -912,6 +916,10 @@
   }
 
   .programDatesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .programDatesSection .programLocationsGrid {
     grid-template-columns: 1fr;
   }
 
